@@ -1,0 +1,63 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String           @id @default(cuid())
+  email     String           @unique
+  name      String?
+  createdAt DateTime         @default(now())
+  progress  LessonProgress[]
+  quizzes   QuizResult[]
+}
+
+model Purchase {
+  id              String   @id @default(cuid())
+  email           String
+  stripeSessionId String   @unique
+  stripePaymentIntent String? @unique
+  amountTotal     Int
+  currency        String
+  status          String   @default("paid")
+  termsAcceptedAt DateTime?
+  createdAt       DateTime @default(now())
+
+  @@index([email])
+}
+
+model LoginToken {
+  id        String    @id @default(cuid())
+  email     String
+  tokenHash String    @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  @@index([email, createdAt])
+}
+
+model LessonProgress {
+  userId      String
+  lessonSlug  String
+  completedAt DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, lessonSlug])
+}
+
+model QuizResult {
+  id         String   @id @default(cuid())
+  userId     String
+  lessonSlug String
+  score      Int
+  total      Int
+  createdAt  DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, lessonSlug])
+}
