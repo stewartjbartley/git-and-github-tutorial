@@ -33,7 +33,7 @@ export const M12: Record<string, Lesson> = {
     ],
   },
 
-  "12-2": {
+  "12-3": {
     goal: "Place stops where the idea fails, set targets that make the numbers work, and decide in advance how you will manage a winning trade.",
     blocks: [
       p(`A stop is where your idea is proved wrong. A target is where you expect to be paid. Management is what you do between them. All three are decisions you make before you enter, not after.`),
@@ -67,7 +67,7 @@ export const M12: Record<string, Lesson> = {
     ],
   },
 
-  "12-3": {
+  "12-4": {
     goal: "Calculate expectancy in R, and see why reward-to-risk matters more than win rate.",
     blocks: [
       p(`<b>R</b> is your risk on a trade. If you risk 100 and lose it, that is a loss of 1R. If you make 200, that is a win of 2R. Counting results in R rather than money lets you compare trades of different sizes. <b>Expectancy</b> is the average result per trade in R.`),
@@ -98,7 +98,7 @@ export const M12: Record<string, Lesson> = {
     ],
   },
 
-  "12-4": {
+  "12-5": {
     goal: "Pre-commit to rules that protect you during a losing streak and after a big win.",
     blocks: [
       p(`Most trading damage is not done by bad setups. It is done by the decisions that follow a loss (or a win) in a hurry. The defence is to decide in advance what you will do, in writing, when it is calm.`),
@@ -125,7 +125,7 @@ export const M12: Record<string, Lesson> = {
     ],
   },
 
-  "12-5": {
+  "12-6": {
     goal: "Keep a journal that records the right things, and run a weekly review that finds your edge in your own data.",
     blocks: [
       p(`The journal is the single most valuable thing you will build in this course. It turns your trading from a feeling into a data set. A good journal is short enough to fill in every time and complete enough to answer any question later.`),
@@ -165,7 +165,7 @@ export const M12: Record<string, Lesson> = {
     ],
   },
 
-  "12-6": {
+  "12-7": {
     exam: true,
     goal: "Write your trading plan, set your limits, and complete the module test.",
     blocks: [
@@ -179,7 +179,7 @@ export const M12: Record<string, Lesson> = {
         `<b>Risk.</b> Risk per trade, daily loss limit and weekly loss limit.`,
         `<b>Stops and targets.</b> My stop rules per setup and my management method.`,
         `<b>News.</b> My stand-aside windows around releases.`,
-        `<b>After a loss and after a win.</b> The pre-committed rules from lesson 12.4.`,
+        `<b>After a loss and after a win.</b> The pre-committed rules from lesson 12.5.`,
         `<b>Review.</b> The day and time of my weekly review.`,
         `<b>Conditions for going live.</b> The number of logged signals, the demo period and the results I need to see.`,
       ),
@@ -189,12 +189,12 @@ export const M12: Record<string, Lesson> = {
     qs: [
       { k: "mc", ref: "12-1", q: "Balance 10,000, risk 1%, stop 20 pips, pip value 10 per lot. What size?", o: ["0.25 lots", "0.5 lots", "1 lot", "2 lots"], ans: 1, ok: "100 / (20 x 10) = 0.5 lots.", bad: "Money at risk divided by stop times pip value." },
       { k: "mc", ref: "12-1", q: "What should you size a trade from?", o: ["The margin", "The stop distance", "Your confidence", "The spread"], ans: 1, ok: "The stop.", bad: "Size from the stop." },
-      { k: "mc", ref: "12-2", q: "Which stop move is acceptable?", o: ["Further from price", "To breakeven after the trade has moved in your favour", "Removing it", "Doubling it"], ans: 1, ok: "Only toward profit.", bad: "Never loosen." },
-      { k: "mc", ref: "12-3", q: "Win rate 40%, average win 2R, losses 1R. Expectancy per trade?", o: ["-0.2R", "+0.2R", "+0.8R", "0"], ans: 1, ok: "0.4 x 2 - 0.6 x 1 = 0.2R.", bad: "Compute both sides." },
-      { k: "mc", ref: "12-3", q: "At a 40% win rate, a streak of five losses is...", o: ["Impossible", "Normal over many trades", "A broken system", "A sign to double size"], ans: 1, ok: "Streaks are expected.", bad: "Streaks happen." },
-      { k: "mc", ref: "12-4", q: "You hit your daily loss limit. What do you do?", o: ["Trade on", "Stop and review", "Double", "Delete the limit"], ans: 1, ok: "Limits work only if obeyed.", bad: "Stop." },
-      { k: "mc", ref: "12-5", q: "In what unit does the journal record results?", o: ["Money", "R", "Pips", "Percent"], ans: 1, ok: "R.", bad: "R makes trades comparable." },
-      { k: "mc", ref: "12-6", q: "When should a plan be written?", o: ["After a loss", "Before you trade, when calm", "Never", "During a trade"], ans: 1, ok: "Calm and in advance.", bad: "Before." },
+      { k: "mc", ref: "12-3", q: "Which stop move is acceptable?", o: ["Further from price", "To breakeven after the trade has moved in your favour", "Removing it", "Doubling it"], ans: 1, ok: "Only toward profit.", bad: "Never loosen." },
+      { k: "mc", ref: "12-4", q: "Win rate 40%, average win 2R, losses 1R. Expectancy per trade?", o: ["-0.2R", "+0.2R", "+0.8R", "0"], ans: 1, ok: "0.4 x 2 - 0.6 x 1 = 0.2R.", bad: "Compute both sides." },
+      { k: "mc", ref: "12-4", q: "At a 40% win rate, a streak of five losses is...", o: ["Impossible", "Normal over many trades", "A broken system", "A sign to double size"], ans: 1, ok: "Streaks are expected.", bad: "Streaks happen." },
+      { k: "mc", ref: "12-5", q: "You hit your daily loss limit. What do you do?", o: ["Trade on", "Stop and review", "Double", "Delete the limit"], ans: 1, ok: "Limits work only if obeyed.", bad: "Stop." },
+      { k: "mc", ref: "12-6", q: "In what unit does the journal record results?", o: ["Money", "R", "Pips", "Percent"], ans: 1, ok: "R.", bad: "R makes trades comparable." },
+      { k: "mc", ref: "12-7", q: "When should a plan be written?", o: ["After a loss", "Before you trade, when calm", "Never", "During a trade"], ans: 1, ok: "Calm and in advance.", bad: "Before." },
     ],
   },
 };

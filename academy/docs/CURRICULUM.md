@@ -3,7 +3,7 @@
 Generated from `content/curriculum.ts`. Hours count guided study (reading, interactive exercises, homework, practice), not video.
 
 
-## Module 1: Markets, charts and your setup (3.5 h)
+## Module 1: Markets, charts and your setup (4 h)
 
 What price is, what you will trade, how timeframes and sessions work in CET, and how to build a clean chart and a study routine.
 
@@ -11,11 +11,12 @@ What price is, what you will trade, how timeframes and sessions work in CET, and
 |---|---|---|---|
 | 1.1 | Who moves price | 30 | Written |
 | 1.2 | What you will trade: FX, gold and indices | 30 | Written |
-| 1.3 | Candlesticks and other chart types | 25 | Written |
-| 1.4 | Timeframes and the top-down method | 35 | Written |
-| 1.5 | Building a clean chart | 30 | Written |
-| 1.6 | Time zones, sessions and candle clocks | 30 | Written |
-| 1.7 | How to study this course | 30 | Written |
+| 1.3 | Spot, CFDs and futures: how the markets differ | 30 | Written |
+| 1.4 | Candlesticks and other chart types | 25 | Written |
+| 1.5 | Timeframes and the top-down method | 35 | Written |
+| 1.6 | Building a clean chart | 30 | Written |
+| 1.7 | Time zones, sessions and candle clocks | 30 | Written |
+| 1.8 | How to study this course | 30 | Written |
 
 ## Module 2: Reading a single candle (4 h)
 
@@ -74,18 +75,18 @@ How price takes the stops at obvious levels and what to do next.
 | 5.7 | Failed sweeps and when they become breakouts | 30 | Written |
 | 5.8 | Sweeps in the sessions: Asia and London | 30 | Written |
 
-## Module 6: Momentum candles and follow-through (3 h)
+## Module 6: Momentum candles and follow-through (2.5 h)
 
 Wide-range candles, the midpoint test, exhaustion and traps.
 
 | # | Lesson | Min | Status |
 |---|---|---|---|
-| 6.1 | Wide-range candles | 30 | Planned |
-| 6.2 | Marubozu and strength | 30 | Planned |
-| 6.3 | The follow-through test | 35 | Planned |
-| 6.4 | Acceleration and exhaustion | 35 | Planned |
-| 6.5 | Momentum traps | 25 | Planned |
-| 6.6 | Trading momentum: the pullback entry | 25 | Planned |
+| 6.1 | Wide-range candles | 25 | Planned |
+| 6.2 | Marubozu and strength | 25 | Planned |
+| 6.3 | The follow-through test | 30 | Planned |
+| 6.4 | Acceleration and exhaustion | 30 | Planned |
+| 6.5 | Momentum traps | 20 | Planned |
+| 6.6 | Trading momentum: the pullback entry | 20 | Planned |
 
 ## Module 7: Candle pairs and triples (4.5 h)
 
@@ -102,32 +103,32 @@ How candles read each other: engulfing, inside bars, harami, tweezers, stars and
 | 7.7 | Soldiers, crows and strings | 30 | Written |
 | 7.8 | Pattern location lab | 30 | Written |
 
-## Module 8: Market structure and trend (3.5 h)
+## Module 8: Market structure and trend (3 h)
 
 Swing points, trends, ranges, breaks of structure and multi-timeframe alignment.
 
 | # | Lesson | Min | Status |
 |---|---|---|---|
-| 8.1 | Swing points | 30 | Planned |
-| 8.2 | Trends and ranges | 30 | Planned |
-| 8.3 | Break of structure | 35 | Planned |
-| 8.4 | Pullbacks and trend health | 35 | Planned |
-| 8.5 | Trendlines and channels | 30 | Planned |
-| 8.6 | Multi-timeframe alignment | 30 | Planned |
+| 8.1 | Swing points | 25 | Planned |
+| 8.2 | Trends and ranges | 25 | Planned |
+| 8.3 | Break of structure | 30 | Planned |
+| 8.4 | Pullbacks and trend health | 30 | Planned |
+| 8.5 | Trendlines and channels | 25 | Planned |
+| 8.6 | Multi-timeframe alignment | 25 | Planned |
 | 8.7 | Structure lab | 20 | Planned |
 
-## Module 9: Support, resistance and zones (3.5 h)
+## Module 9: Support, resistance and zones (3 h)
 
 Why levels exist, how to draw zones, flips, round numbers and zone quality.
 
 | # | Lesson | Min | Status |
 |---|---|---|---|
-| 9.1 | Why levels exist | 30 | Planned |
-| 9.2 | Drawing zones | 35 | Planned |
-| 9.3 | Flips and retests | 35 | Planned |
-| 9.4 | Round numbers and prior highs and lows | 30 | Planned |
-| 9.5 | Zone quality scoring | 30 | Planned |
-| 9.6 | Candles at zones lab | 30 | Planned |
+| 9.1 | Why levels exist | 25 | Planned |
+| 9.2 | Drawing zones | 30 | Planned |
+| 9.3 | Flips and retests | 30 | Planned |
+| 9.4 | Round numbers and prior highs and lows | 25 | Planned |
+| 9.5 | Zone quality scoring | 25 | Planned |
+| 9.6 | Candles at zones lab | 25 | Planned |
 | 9.7 | The zone mapping routine | 20 | Planned |
 
 ## Module 10: Time, sessions and daily levels (4 h)
@@ -158,41 +159,53 @@ Five setups with trigger, stop and target, and a scorecard for choosing between 
 | 11.6 | Setup 5: engulfing at a pullback | 30 | Written |
 | 11.7 | Scoring and selecting | 25 | Written |
 
-## Module 12: Risk, psychology and the journal (3 h)
+## Module 12: Risk, psychology and the journal (3.5 h)
 
 Sizing, stops, expectancy, the losing streak, and a journal that finds your edge.
 
 | # | Lesson | Min | Status |
 |---|---|---|---|
 | 12.1 | Risk per trade and position sizing | 35 | Written |
-| 12.2 | Stops, targets and trade management | 35 | Written |
-| 12.3 | Expectancy and R-multiples | 30 | Written |
-| 12.4 | The psychology of the losing streak | 30 | Written |
-| 12.5 | The journal and the weekly review | 30 | Written |
-| 12.6 | Daily limits and your written trading plan | 20 | Written |
+| 12.2 | Trading costs: spreads, commission, slippage and financing | 30 | Written |
+| 12.3 | Stops, targets and trade management | 35 | Written |
+| 12.4 | Expectancy and R-multiples | 30 | Written |
+| 12.5 | The psychology of the losing streak | 30 | Written |
+| 12.6 | The journal and the weekly review | 30 | Written |
+| 12.7 | Daily limits and your written trading plan | 20 | Written |
 
-## Module 13: Market playbooks (2.5 h)
+## Module 13: Market playbooks (2 h)
 
 How the method adapts to EUR/USD, GBP/USD, USD/JPY, gold, the DAX, IBEX and US indices.
 
 | # | Lesson | Min | Status |
 |---|---|---|---|
-| 13.1 | EUR/USD and GBP/USD | 35 | Planned |
-| 13.2 | USD/JPY | 25 | Planned |
-| 13.3 | Gold (XAU/USD) | 30 | Planned |
-| 13.4 | DAX and IBEX | 30 | Planned |
-| 13.5 | US500 and Nasdaq | 30 | Planned |
+| 13.1 | EUR/USD and GBP/USD | 30 | Planned |
+| 13.2 | USD/JPY | 20 | Planned |
+| 13.3 | Gold (XAU/USD) | 25 | Planned |
+| 13.4 | DAX and IBEX | 25 | Planned |
+| 13.5 | US500 and Nasdaq | 20 | Planned |
 
-## Module 14: Practice lab and capstone (3.5 h)
+## Module 14: Practice lab and capstone (2.5 h)
 
 Replay practice, a 100-signal backtest, review, demo rules, and your own trading plan.
 
 | # | Lesson | Min | Status |
 |---|---|---|---|
-| 14.1 | The replay method | 30 | Planned |
-| 14.2 | Backtesting 100 signals | 60 | Planned |
-| 14.3 | Reviewing your data | 45 | Planned |
-| 14.4 | Demo trading rules | 30 | Planned |
-| 14.5 | Capstone: your trading plan | 45 | Planned |
+| 14.1 | The replay method | 25 | Planned |
+| 14.2 | Backtesting 100 signals | 45 | Planned |
+| 14.3 | Reviewing your data | 30 | Planned |
+| 14.4 | Demo trading rules | 20 | Planned |
+| 14.5 | Capstone: your trading plan | 30 | Planned |
 
-**Total: 50 hours, 3000 minutes.** Written: 64 lessons, 34 hours.
+## Module 15: Funded accounts and prop firms (2 h)
+
+How proprietary-firm evaluations work, the standard rules, how to size within them, and how to judge whether one is worth the fee.
+
+| # | Lesson | Min | Status |
+|---|---|---|---|
+| 15.1 | How prop firms work | 30 | Written |
+| 15.2 | The standard rules | 30 | Written |
+| 15.3 | Fitting the method to the rules | 30 | Written |
+| 15.4 | Is it worth it? Economics and red flags | 30 | Written |
+
+**Total: 50 hours, 3000 minutes.** Written: 70 lessons, 37 hours.

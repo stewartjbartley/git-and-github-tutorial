@@ -3,7 +3,7 @@ import { realSpec } from "@/lib/realChart";
 import { CH, MINI } from "@/content/charts";
 import type { Block } from "@/content/types";
 import { Builder } from "./Builder";
-import { Calc, Clock, ScoreCard } from "./Widgets";
+import { Calc, ChallengeSim, Clock, ScoreCard } from "./Widgets";
 
 const Fig = ({ html, cap }: { html: string; cap: string }) => (
   <figure className="fig">
@@ -63,5 +63,6 @@ export function BlockView({ b }: { b: Block }) {
     case "calc": return <Calc />;
     case "clock": return <Clock />;
     case "score": return <ScoreCard />;
+    case "sim": return <ChallengeSim />;
   }
 }

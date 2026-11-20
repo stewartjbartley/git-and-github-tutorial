@@ -10,11 +10,11 @@ This is what stands between the code in this repo and a paying customer. Read it
 | Passwordless sign-in (one-time email link) | Built and tested |
 | Stripe Checkout with the EU withdrawal waiver | Built, tested against a signed test webhook, not tested against live Stripe |
 | Progress and quiz results saved per student | Built and tested |
-| 50-hour curriculum map (14 modules, 94 lessons) | Done, totals exactly 3,000 minutes |
-| Written lessons | Modules 1 to 5, 7, 10, 11 and 12 (34 h): 64 lessons. See `docs/CURRICULUM.md` for the live status |
+| 50-hour curriculum map (15 modules, 100 lessons) | Done, totals exactly 3,000 minutes |
+| Written lessons | Modules 1 to 5, 7, 10, 11, 12 and 15 (37 h): 70 lessons. See `docs/CURRICULUM.md` for the live status |
 | Real-chart import from CSV | Built (`content/real/`), no real data supplied yet |
 
-**Only 34 of the 50 hours are written.** Do not market 50 hours as available today. Either finish more modules first, or sell it as a pre-launch with a clear release schedule. The sales page already says how many lessons are ready and marks modules as Ready.
+**Only 37 of the 50 hours are written.** Do not market 50 hours as available today. Either finish more modules first, or sell it as a pre-launch with a clear release schedule. The sales page already says how many lessons are ready and marks modules as Ready.
 
 ## Set-up checklist
 
@@ -40,6 +40,7 @@ I am not a lawyer and `/legal` is a template with a warning box on it. Before la
 - **Claims.** No income claims, no screenshots of profits as marketing, no "guaranteed", no testimonials that mention money made. Claims about your own track record need proof.
 - **About the author.** The sales page has no author section on purpose. Add one with your real background, written by you. Do not claim trading experience you do not have.
 - **Data and screenshots.** Check the data licence of any platform you export real charts from before you publish them.
+- **Prop firms (Module 15).** The rules and fees in that module are illustrative ranges. Firms change their rules often, so re-read the lessons against two or three current firm rule books every quarter and keep a visible "last reviewed" date. Do not recommend any firm. If you ever add an affiliate link to a prop firm or broker, disclose it clearly next to the link and in the terms. Promoting prop firms for a commission can fall under financial promotion and advertising rules, so have the wording reviewed.
 - **Privacy.** The app stores email, progress and quiz scores, and uses one essential session cookie. Complete the privacy text with your details and the retention period.
 
 ## Claims on the sales page you must be able to keep
@@ -58,7 +59,7 @@ I am not a lawyer and `/legal` is a template with a warning box on it. Before la
 
 Lessons live in `content/lessons/mN.ts`. Add a file, export a record keyed by slug (for example `"3-1"`), register it in `content/lessons/index.ts`. Each lesson is a list of blocks plus 3 to 8 quiz questions. The curriculum map, sales page, dashboard and "Ready" badges update on their own. A lesson with no content shows "being written".
 
-Still to write: Modules 6, 8, 9, 13 and 14 (momentum, structure, zones, market playbooks, practice lab and capstone). Each module is about 3 to 4.5 hours of material.
+Still to write: Modules 6, 8, 9, 13 and 14 (momentum, structure, zones, market playbooks, practice lab and capstone), 13 hours in total. Each module is about 3 to 4.5 hours of material.
 
 ## Not built
 

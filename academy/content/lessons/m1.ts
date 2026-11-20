@@ -65,7 +65,7 @@ export const M1: Record<string, Lesson> = {
     ],
   },
 
-  "1-3": {
+  "1-4": {
     goal: "Compare line, bar and candle charts, and know what a candle shows and what it hides.",
     blocks: [
       p(`A chart is a way of plotting price against time. Four chart types are common. A <b>line chart</b> joins the closing price of each period and nothing else. A <b>bar chart</b> (OHLC bar) shows the open, high, low and close of each period as a vertical line with small ticks. A <b>candlestick chart</b> shows the same four prices but draws a body between the open and close, which makes direction and strength visible at a glance. <b>Heikin-Ashi</b> candles are calculated from averages and smooth the picture.`),
@@ -89,7 +89,7 @@ export const M1: Record<string, Lesson> = {
     ],
   },
 
-  "1-4": {
+  "1-5": {
     goal: "See how one market looks at three timeframes, and use the top-down order so you never trade against the bigger picture.",
     blocks: [
       p(`A timeframe is the length of time each candle covers. A 1-hour candle summarises sixty minutes of trading. A 4-hour candle is built from four of those, and a daily candle from twenty-four hourly candles in the forex market. Same market, same prices, different resolution.`),
@@ -115,7 +115,7 @@ export const M1: Record<string, Lesson> = {
     ],
   },
 
-  "1-5": {
+  "1-6": {
     goal: "Build a clean naked chart, set your platform to CET, standardise your drawings, and start a screenshot library.",
     blocks: [
       p(`This lesson is practical. By the end you will have a clean chart template and a repeatable way to save evidence. The steps use TradingView terms because it is widely used, and the same ideas work in MetaTrader 5 or cTrader. Menus move between versions, so if a setting is not where this lesson says, search the platform's settings for the name.`),
@@ -126,7 +126,7 @@ export const M1: Record<string, Lesson> = {
         `Set the grid to very faint or off. A heavy grid competes with your zones.`,
         `Set the chart's time zone to <b>Madrid</b> (or another CET/CEST city). A named city handles the clock change in March and October for you. A fixed UTC offset does not.`,
         `Turn on the price scale labels and the countdown to candle close if your platform offers it. You will wait for closes a lot.`,
-        `If available, show the trading sessions as shaded bands. Check the shading against the CET times from lesson 1.6.`,
+        `If available, show the trading sessions as shaded bands. Check the shading against the CET times from lesson 1.7.`,
       ),
       h("Drawing standards"),
       p(`Consistency saves time and prevents mistakes. Use rectangles with about 20% opacity for zones, horizontal rays for single levels, and a text label for the reason the line exists. Colour by meaning: green for support, red for resistance, blue for session ranges, grey for anything else. Never draw more than five zones on a chart. A chart with fifteen lines is a decoration, not a map.`),
@@ -146,7 +146,7 @@ export const M1: Record<string, Lesson> = {
     ],
   },
 
-  "1-6": {
+  "1-7": {
     goal: "Read the session map in CET, know when each candle closes, and avoid time-zone mistakes with your platform.",
     blocks: [
       p(`The same candle means different things at different hours. A hammer at 03:00 CET on thin trading is not the same as a hammer at 09:15 CET after the London open. Everything in this course is in CET, which is the time in Spain. Drag the slider to move through a day, or press the button to jump to the current time.`),
@@ -175,7 +175,7 @@ export const M1: Record<string, Lesson> = {
     ],
   },
 
-  "1-7": {
+  "1-8": {
     goal: "Have a written weekly study plan, a baseline for where you are, and realistic expectations for what this method can do.",
     blocks: [
       p(`This course is 50 hours of guided study, not 50 hours of video. The time counts reading, interactive exercises, homework and practice on your own charts. Most of your learning will happen in the homework, which is deliberately hands-on. Skipping it is the most common reason people finish a course and cannot use it.`),

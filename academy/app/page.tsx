@@ -15,7 +15,7 @@ export default async function Home() {
     <main className="wide">
       <section className="hero">
         <h1>Read candles without indicators</h1>
-        <p>A 50-hour course on price action for forex, gold and stock indices. You learn what each candle says, how candles talk to each other, when they matter in the day (in CET), and how to turn every signal into a plan with an entry, a stop and a target.</p>
+        <p>A 50-hour course on price action for forex, gold and stock indices, including how spot, CFD and futures products differ and how prop-firm rules work. You learn what each candle says, how candles talk to each other, when they matter in the day (in CET), and how to turn every signal into a plan with an entry, a stop and a target.</p>
         <div className="cta-row">
           <Link className="btn primary big" href="/checkout">Get the course{price ? ` for ${price}` : ""}</Link>
           <Link className="btn big" href="/course/1-1">Try a free lesson</Link>
@@ -35,7 +35,7 @@ export default async function Home() {
           <div className="panel"><h3>Read any candle</h3><p>Measure close location, body, wicks and size, then name the candle from its measures instead of a picture.</p></div>
           <div className="panel"><h3>Recognise the signals</h3><p>Dojis, pin bars, long wicks, sweep candles, momentum candles and the patterns candles make with their neighbours.</p></div>
           <div className="panel"><h3>Know when they matter</h3><p>Sessions, opens, candle close times and news in CET, so you give a signal the weight its hour deserves.</p></div>
-          <div className="panel"><h3>Plan every trade</h3><p>Five setups with a trigger, a stop and a target, a scorecard to grade each signal, position sizing and a journal.</p></div>
+          <div className="panel"><h3>Plan every trade</h3><p>Five setups with a trigger, a stop and a target, a scorecard to grade each signal, position sizing, trading costs and slippage, a journal, and how funded-account rules fit.</p></div>
         </div>
       </section>
 

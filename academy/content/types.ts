@@ -15,7 +15,8 @@ export type Block =
   | { t: "builder"; n: 1 | 2 }
   | { t: "calc" }
   | { t: "clock" }
-  | { t: "score" };
+  | { t: "score" }
+  | { t: "sim" };
 
 export type Question =
   | { k: "click"; chart: string; ans: number; q: string; ok: string; bad: string; ref?: string }

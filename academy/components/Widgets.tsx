@@ -96,3 +96,70 @@ export function ScoreCard() {
     </div>
   );
 }
+
+type SimResult = { pass: number; dd: number; day: number; timeout: number; median: number | null };
+
+export function ChallengeSim() {
+  const [win, setWin] = useState(35);
+  const [avgR, setAvgR] = useState(2);
+  const [risk, setRisk] = useState(0.5);
+  const [target, setTarget] = useState(8);
+  const [dd, setDd] = useState(10);
+  const [daily, setDaily] = useState(5);
+  const [perDay, setPerDay] = useState(2);
+  const [res, setRes] = useState<SimResult | null>(null);
+  const num = (f: (n: number) => void) => (e: React.ChangeEvent<HTMLInputElement>) => f(parseFloat(e.target.value) || 0);
+
+  function run() {
+    const runs = 3000;
+    const maxTrades = 400;
+    const perDayN = Math.max(1, Math.round(perDay));
+    let pass = 0, ddF = 0, dayF = 0, to = 0;
+    const passTrades: number[] = [];
+    for (let r = 0; r < runs; r++) {
+      let eq = 0, t = 0, outcome = "to";
+      outer: while (t < maxTrades) {
+        let dayPnl = 0;
+        for (let k = 0; k < perDayN && t < maxTrades; k++) {
+          const pnl = Math.random() < win / 100 ? avgR * risk : -risk;
+          eq += pnl; dayPnl += pnl; t++;
+          if (eq <= -dd) { outcome = "dd"; break outer; }
+          if (dayPnl <= -daily) { outcome = "day"; break outer; }
+          if (eq >= target) { outcome = "pass"; break outer; }
+        }
+      }
+      if (outcome === "pass") { pass++; passTrades.push(t); }
+      else if (outcome === "dd") ddF++;
+      else if (outcome === "day") dayF++;
+      else to++;
+    }
+    passTrades.sort((a, b) => a - b);
+    const pc = (n: number) => Math.round((n / runs) * 1000) / 10;
+    setRes({ pass: pc(pass), dd: pc(ddF), day: pc(dayF), timeout: pc(to), median: passTrades.length ? passTrades[Math.floor(passTrades.length / 2)] : null });
+  }
+
+  return (
+    <div className="calc" style={{ maxWidth: 640 }}>
+      <div className="f"><label htmlFor="s-win">Win rate (%)</label><input id="s-win" type="number" value={win} min={1} max={99} onChange={num(setWin)} /></div>
+      <div className="f"><label htmlFor="s-r">Average win (R)</label><input id="s-r" type="number" value={avgR} min={0.1} step={0.1} onChange={num(setAvgR)} /></div>
+      <div className="f"><label htmlFor="s-risk">Risk per trade (% of start balance)</label><input id="s-risk" type="number" value={risk} min={0.05} step={0.05} onChange={num(setRisk)} /></div>
+      <div className="f"><label htmlFor="s-t">Profit target (%)</label><input id="s-t" type="number" value={target} min={0.5} step={0.5} onChange={num(setTarget)} /></div>
+      <div className="f"><label htmlFor="s-dd">Maximum total loss (%)</label><input id="s-dd" type="number" value={dd} min={0.5} step={0.5} onChange={num(setDd)} /></div>
+      <div className="f"><label htmlFor="s-d">Maximum daily loss (%)</label><input id="s-d" type="number" value={daily} min={0.5} step={0.5} onChange={num(setDaily)} /></div>
+      <div className="f"><label htmlFor="s-n">Trades per day</label><input id="s-n" type="number" value={perDay} min={1} step={1} onChange={num(setPerDay)} /></div>
+      <p className="legal" style={{ margin: "8px 0" }}>These starting numbers are placeholders for a thin edge, not a forecast. Replace them with your own journal figures.</p>
+      <button className="btn primary" onClick={run}>Run 3,000 attempts</button>
+      <div className="res" aria-live="polite">
+        {res ? (
+          <>
+            Passed: <b>{res.pass}%</b><br />
+            Failed on total loss: <b>{res.dd}%</b><br />
+            Failed on daily loss: <b>{res.day}%</b><br />
+            Timed out after 400 trades: <b>{res.timeout}%</b><br />
+            Median trades to pass: <b>{res.median ?? "none passed"}</b>
+          </>
+        ) : "Set your numbers and run it."}
+      </div>
+    </div>
+  );
+}

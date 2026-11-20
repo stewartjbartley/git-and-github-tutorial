@@ -1,0 +1,135 @@
+import type { Lesson } from "../types";
+import { p, h, rule, warn, ol, hw, table } from "./h";
+
+// All figures in this module are illustrative. Prop firm rules and fees differ between firms and change often.
+export const M15: Record<string, Lesson> = {
+  "15-1": {
+    goal: "Explain how a retail prop firm works, where its money comes from, and what is and is not real about the account you are given.",
+    blocks: [
+      p(`Traditionally a proprietary (prop) trading firm trades its own capital using employed traders. The retail version that has grown online works differently. It sells you an <b>evaluation</b>, often called a challenge, for a fee. If you meet the rules, you are given a <b>funded account</b> and keep a share of the profits you make on it. The firm sets the rules, the account size and the profit split.`),
+      table(["Stage","What happens","What you pay or get"],[
+        ["<b>1. Evaluation</b>","You trade an account of a stated size (for example 100,000) under rules for a profit target, a daily loss limit and a total loss limit.","You pay a fee up front. Some firms refund it later, under conditions."],
+        ["<b>2. Verification (some firms)</b>","A second phase with a smaller target.","Usually no extra fee."],
+        ["<b>3. Funded account</b>","You trade under similar rules and can request payouts.","You receive a share of profits, often between 70% and 90%, depending on the firm."],
+        ["<b>4. Scaling (some firms)</b>","If you hit targets repeatedly, the account size can grow.","Larger account, same share."],
+      ]),
+      h("Where the money comes from"),
+      p(`Firms are businesses, and business models differ. For many, a large part of revenue is the evaluation fees paid by the many traders who try. Some also earn from their share of profits on funded accounts, and some have real market exposure behind their funded accounts. The mix is rarely published, and it is worth knowing because it tells you whose interests the rules serve.`),
+      h("What is real and what is simulated"),
+      p(`Many evaluation accounts run on simulated trading, which means orders are matched against a price feed and not sent to a real market. Funded accounts vary. At some firms the trades are copied to a live account. At others the account remains simulated and the payouts come from the firm's revenue. The firm's own documents should say which. If they are vague, treat that as information.`),
+      h("Regulation and protection"),
+      p(`A broker is usually regulated as an investment firm, with rules on client money and complaints. A prop firm that sells evaluations is often selling a service rather than holding client money for trading, and may not be regulated in the same way. Investor compensation schemes may not apply. Check who the legal entity is, where it is registered, and what the contract says.`),
+      warn(`Paying a fee for an evaluation is a cost, not an investment, and nothing here suggests that you will pass or be paid. This course does not recommend any prop firm. If a firm is ever linked from this course, the relationship will be disclosed.`),
+      rule(`A challenge fee buys an attempt under someone else's rules. Know who runs the firm, what it earns from, and whether your trades are live.`),
+      hw(30, `Choose three firms. From each firm's own terms (not reviews or videos), write down: the legal entity and country, the fee, the profit target, the daily and total loss limits, the profit split, the payout rules, and what it says about whether trades are live or simulated. Do not buy anything.`),
+    ],
+    qs: [
+      { k: "mc", q: "What does a retail prop firm sell first?", o: ["A broker account", "An evaluation, for a fee", "A trading signal", "A bank loan"], ans: 1, ok: "You pay for an attempt under the firm's rules.", bad: "The fee is paid up front for the evaluation." },
+      { k: "mc", q: "Why does it matter whether the firm earns mainly from fees or from trader profits?", o: ["It does not", "It tells you whose interests the rules serve", "It sets the spread", "It changes candle patterns"], ans: 1, ok: "Business model shapes rule design.", bad: "Follow the money." },
+      { k: "mc", q: "Is a challenge fee best seen as an investment or a cost?", o: ["An investment with a guaranteed return", "A cost, paid for an attempt that may not succeed", "A deposit you always get back", "A tax"], ans: 1, ok: "A cost.", bad: "You may not pass, and the fee is not necessarily refundable." },
+      { k: "mc", q: "Where should you look to find out whether trades are live or simulated?", o: ["Social media reviews", "The firm's own terms and documents", "A forum", "Ask a friend"], ans: 1, ok: "The primary source.", bad: "Read the contract." },
+    ],
+  },
+
+  "15-2": {
+    goal: "Read a firm's rule book: targets, daily and total loss limits, static and trailing drawdown, consistency and news rules, and payouts.",
+    blocks: [
+      p(`Rules differ between firms and change over time, so what follows is a map of the usual categories, with illustrative numbers. Always read the current rules of the firm you are considering. The numbers below are typical of the range, not a quote from any firm.`),
+      table(["Rule","Illustrative range","What it does to your trading"],[
+        ["<b>Profit target</b>","5% to 10% per phase","You must make a fixed gain, which tempts you to raise risk."],
+        ["<b>Maximum daily loss</b>","About 3% to 5% of the starting balance","Counts open losses as well as closed ones on many firms. A single bad day ends the attempt."],
+        ["<b>Maximum total loss</b>","About 6% to 12%","The absolute floor for the account."],
+        ["<b>Static or trailing drawdown</b>","Static: fixed from the start. Trailing: follows your peak.","A trailing floor rises as you win, so your buffer shrinks."],
+        ["<b>Minimum trading days</b>","0 to 5 days","Stops you passing on one lucky day."],
+        ["<b>Time limit</b>","None at many firms, 30 days at some","Pushes you to take more risk."],
+        ["<b>Consistency rule</b>","No single day or trade above a set share of total profit","Penalises one big win."],
+        ["<b>News restrictions</b>","No opening or closing in a window around high-impact news, on some funded accounts","Matches the stand-aside windows in Module 10."],
+        ["<b>Weekend and overnight holding</b>","Banned at some firms","Forces you to close positions."],
+        ["<b>Prohibited methods</b>","Latency arbitrage, grid and martingale, high-frequency tactics, some copy trading and expert advisors","Check before using automation."],
+        ["<b>Payouts</b>","Profit split of 70% to 90%, first payout after a set number of days, minimum payout size","Defines what you actually receive."],
+        ["<b>Inactivity</b>","Account closed after a period with no trades","Matters if you trade rarely."],
+      ]),
+      h("A worked example"),
+      p(`Take a 100,000 account with an 8% target (8,000), a 5% daily loss limit (5,000) and a 10% total loss limit (10,000). With a static drawdown, the floor is 90,000 for the whole attempt. With a trailing drawdown of 10,000 from the highest balance, the floor starts at 90,000 and rises as you win. After you reach 104,000 the floor is at 94,000. If the balance then falls back to where you started, at 100,000, you are only 6,000 above the floor, where at the start you were 10,000 above it. The buffer from the current balance has shrunk.`),
+      p(`The daily limit often includes floating profit and loss. If you hold a trade that is 3% down at the point the day's limit is calculated, 3% of the 5% is already used before you have lost anything on a closed trade. Read the exact definition: balance-based or equity-based, and which clock marks the start of the day.`),
+      rule(`Know the exact definition of each rule, especially daily loss (balance or equity) and drawdown (static or trailing). Most failed attempts break the rule the trader misread.`),
+      hw(30, `For one firm you collected in the last lesson, rewrite each rule in your own words with a number. Calculate in money: the daily loss limit, the total loss floor, and the floor after a 4% gain if the drawdown is trailing.`),
+    ],
+    qs: [
+      { k: "mc", q: "A 50,000 account has a 5% daily loss limit. What is it in money?", o: ["500", "1,000", "2,500", "5,000"], ans: 2, ok: "5% of 50,000 is 2,500.", bad: "Multiply the balance by the percentage." },
+      { k: "mc", q: "A trailing drawdown of 10,000 follows the highest balance. You start at 50,000 and reach 53,000. Where is the floor?", o: ["40,000", "43,000", "50,000", "53,000"], ans: 1, ok: "Peak 53,000 minus 10,000 is 43,000.", bad: "The floor follows the peak by the trailing amount." },
+      { k: "mc", q: "Why does the equity or balance definition of the daily limit matter?", o: ["It does not", "Floating losses may count, so an open losing trade can use up the limit before you close it", "It changes the spread", "It only matters at weekends"], ans: 1, ok: "Read the exact definition.", bad: "Floating loss may count." },
+      { k: "mc", q: "A consistency rule says no single day may exceed a set share of total profit. What does it penalise?", o: ["Steady trading", "One big winning day", "Small losses", "Trading in London"], ans: 1, ok: "It discourages relying on a single big win.", bad: "Think about what makes a day large." },
+    ],
+  },
+
+  "15-3": {
+    goal: "Size and schedule your trades so that you cannot breach the rules by accident, and test your own numbers in a pass-rate simulator.",
+    blocks: [
+      p(`The rules above are a risk budget, and your method already has risk controls: a fixed risk per trade, a limit on losses per day and a stop on every trade. Fitting the two together is arithmetic.`),
+      h("The daily loss check"),
+      p(`The worst case for a day is your risk per trade times the number of trades you allow yourself that day. Keep that under half of the daily limit. With a 5% daily limit, 0.5% risk per trade and a maximum of three trades a day, the worst case is 1.5%, which is comfortable. With 1% risk and no cap on the number of trades, five losses in a day end the attempt.`),
+      h("The total drawdown check"),
+      p(`With a 10% total limit and 1% risk per trade, ten losses in a row, ignoring compounding, reach the floor. At 0.5% it takes twenty. A trailing drawdown is stricter, because the floor rises with your balance, so use a smaller risk once you are in profit rather than a larger one.`),
+      h("Trade the same way in the evaluation and when funded"),
+      p(`An evaluation with a target and a deadline pushes you toward larger risk. Resist it. The numbers in your journal came from a certain risk and a certain set of setups. A higher risk produces a different distribution of outcomes, and your journal no longer describes what you are doing.`),
+      h("Other rules and your method"),
+      table(["Rule","What to do"],[
+        ["News restrictions","Already in your plan: stand aside around releases."],
+        ["Consistency","Avoid one oversized day. Take partial profits and keep size constant."],
+        ["Minimum days","Plan to trade across days, not rush a pass in one."],
+        ["No weekend holding","Close before the Friday close, or use setups that resolve within a day."],
+        ["Stops","Always attach a stop on entry. Never remove one."],
+      ]),
+      h("Try the pass-rate simulator"),
+      p(`The simulator runs 3,000 attempts with the numbers you enter and shows how often each ends in a pass, a drawdown failure, a daily-loss failure or a timeout after 400 trades. Try your own win rate and average win from your journal. Then change the risk per trade and watch what happens. It uses a fixed risk per trade, a static drawdown and an even number of trades per day, so it ignores costs, news rules and trailing floors. Treat it as a way to understand the shape of the problem, not a forecast.`),
+      { t: "sim" },
+      rule(`Worst-case day equals risk per trade times trades per day. Keep it under half of the daily limit, trade the same way in the evaluation as when funded, and let your journal data set the inputs.`),
+      hw(30, `Enter your journal numbers (or, if you have fewer than 50 trades, use deliberately pessimistic figures). Try risk per trade at 0.25%, 0.5%, 1% and 2%. Write down the pass rate and the failure reasons for each. Which risk level gives the best pass rate, and how many trades does it take?`),
+    ],
+    qs: [
+      { k: "mc", q: "Risk is 0.75% per trade, you allow three trades a day, and the daily limit is 5%. What is the worst-case day?", o: ["0.75%", "2.25%", "3.75%", "5%"], ans: 1, ok: "3 times 0.75% is 2.25%, comfortably under half of the limit.", bad: "Risk per trade times trades per day." },
+      { k: "mc", q: "With a 10% total limit and 1% risk per trade, roughly how many losses in a row reach the floor, ignoring compounding?", o: ["5", "10", "20", "50"], ans: 1, ok: "Ten losses of 1% is 10%.", bad: "Divide the limit by the risk." },
+      { k: "mc", q: "Why should you trade with the same risk in the evaluation as when funded?", o: ["Rules require it", "Your journal data describes a certain risk, and a different risk changes the outcomes", "The firm checks", "It is faster"], ans: 1, ok: "Keep your data meaningful.", bad: "Consistency keeps your evidence valid." },
+      { k: "mc", q: "What does the simulator ignore?", o: ["The win rate", "Costs, news rules and trailing floors", "The risk per trade", "The profit target"], ans: 1, ok: "It is a simplified model.", bad: "Read the note under the simulator." },
+    ],
+  },
+
+  "15-4": {
+    exam: true,
+    goal: "Estimate whether a challenge fee has a positive expected value, spot the warning signs, and know the alternatives.",
+    blocks: [
+      p(`Before you pay for any evaluation, put a number on it. The framework is short: <b>expected value equals the probability of passing times the value of the funded stage, minus the fee</b>. The value of the funded stage is the average amount you would actually be paid, which may be zero, and it includes what you might lose in further fees or resets.`),
+      table(["Fee","Chance of passing","Average payouts if funded","Expected value"],[
+        ["150","20%","800","0.20 x 800 - 150 = +10"],
+        ["150","10%","800","0.10 x 800 - 150 = -70"],
+        ["150","20%","400","0.20 x 400 - 150 = -70"],
+      ]),
+      p(`These numbers are invented to show how sensitive the result is. A halving of either the pass rate or the average payout turns a small positive into a clear negative. The pass rate that matters is yours, not the firm's marketing. Your journal and the simulator are the only sources you can trust for it, and they only work once you have a measured edge. Without data, the pass rate is a guess.`),
+      h("Warning signs"),
+      ol(
+        `You cannot find the legal entity, its country or its registration.`,
+        `The rules are vague on key points (daily loss definition, live or simulated, payout terms).`,
+        `Rules have been changed after purchase, or reset fees apply to a breach you did not understand.`,
+        `Marketing leans on payout screenshots, lifestyle imagery or a discount that expires today.`,
+        `The only reviews are from people paid to promote the firm.`,
+        `There is no clear refund, reset or complaints process.`,
+      ),
+      p(`A firm can have several of these and still pay out, and a firm with none can still change its rules. The list is a reason to read the contract more carefully, not a verdict.`),
+      h("What else you can do"),
+      p(`The alternative is a small live or demo account of your own. A prop account gives you larger notional size without your own capital, but you do not own the account, you share the profits and you play by someone else's rules. A small account of your own has no deadline, no external drawdown rule, and all of the results are yours. If your edge is real, you can grow it. If it is not, you find out for a smaller cost. For a trader who has completed Module 14 with positive results, a prop evaluation can be a reasonable choice, and it is a decision to make with the numbers in front of you.`),
+      rule(`Calculate the expected value with your own pass rate. If you do not have one, you are not ready to pay for the attempt.`),
+      hw(30, `Pick one firm. Using your simulator pass rate and a deliberately conservative guess for average payouts, compute the expected value. Then do it again with the pass rate halved. If the result is negative in the second case, write down what would have to be true for you to proceed.`),
+    ],
+    qs: [
+      { k: "mc", ref: "15-4", q: "Fee 200, pass probability 15%, average payouts if funded 1,000. What is the expected value?", o: ["-50", "0", "+50", "+150"], ans: 0, ok: "0.15 x 1,000 = 150, minus the fee of 200, is -50.", bad: "Probability times payout, minus the fee." },
+      { k: "mc", ref: "15-1", q: "What is a challenge fee best described as?", o: ["A deposit", "A cost for an attempt that may not succeed", "An investment with a return", "A tax"], ans: 1, ok: "A cost.", bad: "You may not pass." },
+      { k: "mc", ref: "15-2", q: "A 100,000 account has a 5% daily loss limit. What is the limit in money?", o: ["1,000", "2,500", "5,000", "10,000"], ans: 2, ok: "5% of 100,000.", bad: "Multiply." },
+      { k: "mc", ref: "15-2", q: "A trailing drawdown follows the highest balance by 10,000. Your peak is 108,000. Where is the floor?", o: ["90,000", "98,000", "100,000", "108,000"], ans: 1, ok: "108,000 minus 10,000.", bad: "Peak minus the trailing amount." },
+      { k: "mc", ref: "15-3", q: "Risk is 0.5% per trade, a maximum of four trades a day. Worst-case day?", o: ["0.5%", "2%", "4%", "5%"], ans: 1, ok: "4 times 0.5%.", bad: "Risk times trades." },
+      { k: "mc", ref: "15-3", q: "Why not raise your risk in an evaluation to reach the target sooner?", o: ["It is not allowed", "It changes the outcome distribution, raises the chance of breaching a limit and makes your journal data meaningless", "It lowers the fee", "It improves the pass rate for sure"], ans: 1, ok: "Higher risk fails more often.", bad: "Think about drawdown." },
+      { k: "mc", ref: "15-1", q: "Where do you find out whether a firm's trades are live or simulated?", o: ["Reviews", "The firm's own terms", "Social media", "A friend"], ans: 1, ok: "The contract.", bad: "Primary source." },
+      { k: "mc", ref: "15-4", q: "You have no logged results yet. What is your pass rate for the expected value calculation?", o: ["The firm's published rate", "Unknown: without your own data it is a guess", "50%", "100%"], ans: 1, ok: "That is why data comes first.", bad: "Marketing figures are not your data." },
+    ],
+  },
+};

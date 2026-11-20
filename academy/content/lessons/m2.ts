@@ -211,7 +211,7 @@ export const M2: Record<string, Lesson> = {
     blocks: [
       p(`This is the Module 2 test. Eight questions mix charts and arithmetic. A wrong answer names the lesson to revisit. Aim for six or more before you move on.`),
       h("Redo your baseline"),
-      p(`After the test, go back to the ten-candle baseline you wrote in lesson 1.7. Read the same candles again using the four-question method, and write a new line for each. Put the two versions side by side. The difference in how much you can see is the point of the module.`),
+      p(`After the test, go back to the ten-candle baseline you wrote in lesson 1.8. Read the same candles again using the four-question method, and write a new line for each. Put the two versions side by side. The difference in how much you can see is the point of the module.`),
       hw(20, `Redo the baseline reading of ten candles with the four questions. Then take a 1-hour chart you have not looked at before and narrate 20 candles in one sitting. If you can do it in under 15 minutes without hesitating on the measures, you are ready for Module 3.`),
     ],
     qs: [
