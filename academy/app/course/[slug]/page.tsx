@@ -6,6 +6,7 @@ import { findLesson, neighbours } from "@/content/curriculum";
 import { BlockView } from "@/components/Blocks";
 import { Quiz } from "@/components/Quiz";
 import { CompleteButton } from "@/components/CompleteButton";
+import { downloadsForLesson } from "@/content/downloads";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const f = findLesson((await params).slug);
@@ -72,6 +73,17 @@ export default async function LessonPage({ params }: { params: Promise<{ slug: s
       <div className="lesson-body">
         {lesson.blocks.map((b, i) => <BlockView key={i} b={b} />)}
       </div>
+      {downloadsForLesson(slug).length > 0 && (
+        <section className="dl-box">
+          <h3>Download</h3>
+          {downloadsForLesson(slug).map((d) => (
+            <div className="dl" key={d.id}>
+              <div><b>{d.title}</b><p>{d.desc}</p></div>
+              <a className="btn" href={`/api/downloads/${d.id}`}>PDF</a>
+            </div>
+          ))}
+        </section>
+      )}
       <Quiz slug={slug} qs={lesson.qs} exam={lesson.exam} />
       <div className="foot">
         <span>{prev && <Link className="btn" href={`/course/${prev}`}>← {prev.replace("-", ".")}</Link>}</span>

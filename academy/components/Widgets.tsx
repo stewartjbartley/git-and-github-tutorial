@@ -163,3 +163,26 @@ export function ChallengeSim() {
     </div>
   );
 }
+
+export function DrawdownCalc() {
+  const [dd, setDd] = useState(20);
+  const [exp, setExp] = useState(0.2);
+  const [risk, setRisk] = useState(1);
+  const valid = dd > 0 && dd < 100;
+  const rec = valid ? (dd / (100 - dd)) * 100 : 0;
+  const perTrade = exp * risk;
+  const trades = valid && perTrade > 0 ? Math.ceil(rec / perTrade) : null;
+  const num = (f: (n: number) => void) => (e: React.ChangeEvent<HTMLInputElement>) => f(parseFloat(e.target.value) || 0);
+  return (
+    <div className="calc">
+      <div className="f"><label htmlFor="d-dd">Drawdown (%)</label><input id="d-dd" type="number" value={dd} min={1} max={99} onChange={num(setDd)} /></div>
+      <div className="f"><label htmlFor="d-e">Expectancy per trade (R)</label><input id="d-e" type="number" value={exp} min={0.01} step={0.05} onChange={num(setExp)} /></div>
+      <div className="f"><label htmlFor="d-r">Risk per trade (%)</label><input id="d-r" type="number" value={risk} min={0.05} step={0.05} onChange={num(setRisk)} /></div>
+      <div className="res" aria-live="polite">
+        {valid ? (
+          <>Gain needed to recover: <b>{rec.toFixed(1)}%</b><br />Average gain per trade: <b>{perTrade.toFixed(2)}%</b><br />Rough number of trades: <b>{trades ?? "never, with no positive expectancy"}</b></>
+        ) : "Enter a drawdown between 1 and 99."}
+      </div>
+    </div>
+  );
+}

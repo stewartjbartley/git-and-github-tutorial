@@ -22,6 +22,7 @@ export default async function Dashboard() {
         <h1>My course</h1>
         <p className="legal">{s.email}</p>
         {!access && <div className="paywall"><p><b>You do not have access yet.</b> The free lessons are open. Buy the course to unlock the rest.</p><Link className="btn primary" href="/checkout">Get the course</Link></div>}
+        <p><Link href="/course/downloads">Printable downloads</Link></p>
         <p>{doneN} of {written.length} available lessons complete. The full course is {fmtHours(COURSE_MINUTES)} hours.</p>
         <div className="bar-track" aria-label={`${pct}% complete`}><div className="bar-fill" style={{ width: `${pct}%` }} /></div>
       </div>

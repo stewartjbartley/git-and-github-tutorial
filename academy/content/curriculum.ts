@@ -16,6 +16,7 @@ export const MODULES: Module[] = [
     ["Spot, CFDs and futures: how the markets differ", 30, "Cash, CFD and futures prices, contract specifications, roll gaps, volume and which rules apply to each."],
     ["Candlesticks and other chart types", 25, "Why candles, what they hide, and what colour really means."],
     ["Timeframes and the top-down method", 35, "One market at three resolutions, and the order to read them in."],
+    ["Trading styles: scalping, day trading, swing and position", 35, "How long you hold, what each style asks of you, and the risks and advantages of each."],
     ["Building a clean chart", 30, "No indicators, a CET clock, drawing standards, templates and a screenshot library."],
     ["Time zones, sessions and candle clocks", 30, "London, New York and index hours in CET, and when each candle closes."],
     ["How to study this course", 30, "The weekly rhythm, the 100-signal rule, and your baseline."],
@@ -58,12 +59,12 @@ export const MODULES: Module[] = [
     ["Sweeps in the sessions: Asia and London", 30, "The Asian range and the London open."],
   ]),
   mod(6, "Momentum candles and follow-through", "Wide-range candles, the midpoint test, exhaustion and traps.", [
-    ["Wide-range candles", 25, "Measuring a candle against its neighbours."],
-    ["Marubozu and strength", 25, "When one side owns the whole candle."],
-    ["The follow-through test", 30, "Holding the midpoint."],
-    ["Acceleration and exhaustion", 30, "Growing bodies into a wick."],
-    ["Momentum traps", 20, "Big candles that fail."],
-    ["Trading momentum: the pullback entry", 20, "Waiting for the first small candle."],
+    ["Wide-range candles", 30, "Measuring a candle against its neighbours."],
+    ["Marubozu and strength", 30, "When one side owns the whole candle."],
+    ["The follow-through test", 35, "Holding the midpoint."],
+    ["Acceleration and exhaustion", 35, "Growing bodies into a wick."],
+    ["Momentum traps", 25, "Big candles that fail."],
+    ["Trading momentum: the pullback entry", 25, "Waiting for the first small candle."],
   ]),
   mod(7, "Candle pairs and triples", "How candles read each other: engulfing, inside bars, harami, tweezers, stars and strings.", [
     ["Five questions to ask of every candle", 30, "Closes against the last high, low and midpoint; overlap; size."],
@@ -76,21 +77,21 @@ export const MODULES: Module[] = [
     ["Pattern location lab", 30, "Filtering pattern lists with levels and time."],
   ]),
   mod(8, "Market structure and trend", "Swing points, trends, ranges, breaks of structure and multi-timeframe alignment.", [
-    ["Swing points", 25, "Highs and lows that matter."],
-    ["Trends and ranges", 25, "Higher highs, lower lows, and the rest."],
-    ["Break of structure", 30, "Closes, not wicks."],
-    ["Pullbacks and trend health", 30, "Impulse against correction."],
-    ["Trendlines and channels", 25, "Two touches to draw, three to trust."],
-    ["Multi-timeframe alignment", 25, "When the bigger timeframe wins."],
+    ["Swing points", 30, "Highs and lows that matter."],
+    ["Trends and ranges", 30, "Higher highs, lower lows, and the rest."],
+    ["Break of structure", 35, "Closes, not wicks."],
+    ["Pullbacks and trend health", 35, "Impulse against correction."],
+    ["Trendlines and channels", 30, "Two touches to draw, three to trust."],
+    ["Multi-timeframe alignment", 30, "When the bigger timeframe wins."],
     ["Structure lab", 20, "Mark up a week of real charts."],
   ]),
   mod(9, "Support, resistance and zones", "Why levels exist, how to draw zones, flips, round numbers and zone quality.", [
-    ["Why levels exist", 25, "Memory and order clusters."],
-    ["Drawing zones", 30, "Bands, not lines."],
-    ["Flips and retests", 30, "Resistance becomes support."],
-    ["Round numbers and prior highs and lows", 25, "Automatic zones."],
-    ["Zone quality scoring", 25, "Touches, age, reaction and timeframe."],
-    ["Candles at zones lab", 25, "Every signal needs a place."],
+    ["Why levels exist", 30, "Memory and order clusters."],
+    ["Drawing zones", 35, "Bands, not lines."],
+    ["Flips and retests", 35, "Resistance becomes support."],
+    ["Round numbers and prior highs and lows", 30, "Automatic zones."],
+    ["Zone quality scoring", 30, "Touches, age, reaction and timeframe."],
+    ["Candles at zones lab", 30, "Every signal needs a place."],
     ["The zone mapping routine", 20, "Four or five zones, nothing more."],
   ]),
   mod(10, "Time, sessions and daily levels", "How candles change meaning across the day in CET, and how to build a daily routine.", [
@@ -116,23 +117,25 @@ export const MODULES: Module[] = [
     ["Trading costs: spreads, commission, slippage and financing", 30, "What each trade really costs, in pips and in R, and how slippage changes your plan."],
     ["Stops, targets and trade management", 35, "Where to exit and when."],
     ["Expectancy and R-multiples", 30, "Why 2R matters more than win rate."],
+    ["Drawdown and recovery", 35, "Why a 50% loss needs a 100% gain, how long recovery takes, and how to limit drawdown."],
     ["The psychology of the losing streak", 30, "Rules that survive a bad week."],
     ["The journal and the weekly review", 30, "Finding your edge in your own data."],
-    ["Daily limits and your written trading plan", 20, "Rules first, trades second."],
+    ["Why you need a trading plan", 30, "What a plan is, how it works, and what it does for your results."],
+    ["Writing your trading plan: template and limits", 20, "Your one-page plan, your limits and the module test."],
   ]),
   mod(13, "Market playbooks", "How the method adapts to EUR/USD, GBP/USD, USD/JPY, gold, the DAX, IBEX and US indices.", [
-    ["EUR/USD and GBP/USD", 30, "Session behaviour and candle character."],
-    ["USD/JPY", 20, "Trends and the Asian session."],
-    ["Gold (XAU/USD)", 25, "Big ranges, New York and news."],
-    ["DAX and IBEX", 25, "European cash opens."],
-    ["US500 and Nasdaq", 20, "The US cash open."],
+    ["EUR/USD and GBP/USD", 35, "Session behaviour and candle character."],
+    ["USD/JPY", 25, "Trends and the Asian session."],
+    ["Gold (XAU/USD)", 30, "Big ranges, New York and news."],
+    ["DAX and IBEX", 30, "European cash opens."],
+    ["US500 and Nasdaq", 30, "The US cash open."],
   ]),
   mod(14, "Practice lab and capstone", "Replay practice, a 100-signal backtest, review, demo rules, and your own trading plan.", [
-    ["The replay method", 25, "Practising without hindsight."],
-    ["Backtesting 100 signals", 45, "Collecting your own data."],
-    ["Reviewing your data", 30, "What worked, when and why."],
-    ["Demo trading rules", 20, "How to move to live safely."],
-    ["Capstone: your trading plan", 30, "One document, written by you."],
+    ["The replay method", 30, "Practising without hindsight."],
+    ["Backtesting 100 signals", 60, "Collecting your own data."],
+    ["Reviewing your data", 45, "What worked, when and why."],
+    ["Demo trading rules", 30, "How to move to live safely."],
+    ["Capstone: your trading plan", 45, "One document, written by you."],
   ]),
   mod(15, "Funded accounts and prop firms", "How proprietary-firm evaluations work, the standard rules, how to size within them, and how to judge whether one is worth the fee.", [
     ["How prop firms work", 30, "Evaluations, funded accounts, where the money comes from and what is simulated."],
@@ -143,6 +146,8 @@ export const MODULES: Module[] = [
 ];
 
 export const COURSE_MINUTES = MODULES.reduce((a, m) => a + m.lessons.reduce((b, l) => b + l.minutes, 0), 0);
+/** Rounded for marketing copy. Lesson 1.9 hard-codes the same figure: scripts/check-content.ts fails if they drift apart. */
+export const COURSE_HOURS = Math.round(COURSE_MINUTES / 60);
 export const moduleMinutes = (m: Module) => m.lessons.reduce((a, l) => a + l.minutes, 0);
 export const fmtHours = (min: number) => {
   const h = min / 60;

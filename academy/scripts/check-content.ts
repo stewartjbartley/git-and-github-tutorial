@@ -1,5 +1,5 @@
 // Validates every written lesson: quiz indexes, chart ids, minutes. Run: npx tsx scripts/check-content.ts
-import { MODULES } from "../content/curriculum";
+import { MODULES, COURSE_HOURS } from "../content/curriculum";
 import { LESSONS } from "../content/lessons";
 import { CH, MINI } from "../content/charts";
 import { toBars } from "../lib/chart";
@@ -32,5 +32,6 @@ for (const m of MODULES) for (const meta of m.lessons) {
     }
   });
 }
+if (COURSE_HOURS !== 55) fail(`course is now ${COURSE_HOURS} hours. Update the "55 hours" copy in lesson 1.9 (and the study-pace table) and this check.`);
 console.log(`${written} lessons written, ${(writtenMin / 60).toFixed(1)} hours, ${bad} problems`);
 process.exit(bad ? 1 : 0);

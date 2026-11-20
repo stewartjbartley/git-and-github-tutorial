@@ -115,7 +115,7 @@ export const M1: Record<string, Lesson> = {
     ],
   },
 
-  "1-6": {
+  "1-7": {
     goal: "Build a clean naked chart, set your platform to CET, standardise your drawings, and start a screenshot library.",
     blocks: [
       p(`This lesson is practical. By the end you will have a clean chart template and a repeatable way to save evidence. The steps use TradingView terms because it is widely used, and the same ideas work in MetaTrader 5 or cTrader. Menus move between versions, so if a setting is not where this lesson says, search the platform's settings for the name.`),
@@ -126,7 +126,7 @@ export const M1: Record<string, Lesson> = {
         `Set the grid to very faint or off. A heavy grid competes with your zones.`,
         `Set the chart's time zone to <b>Madrid</b> (or another CET/CEST city). A named city handles the clock change in March and October for you. A fixed UTC offset does not.`,
         `Turn on the price scale labels and the countdown to candle close if your platform offers it. You will wait for closes a lot.`,
-        `If available, show the trading sessions as shaded bands. Check the shading against the CET times from lesson 1.7.`,
+        `If available, show the trading sessions as shaded bands. Check the shading against the CET times from lesson 1.8.`,
       ),
       h("Drawing standards"),
       p(`Consistency saves time and prevents mistakes. Use rectangles with about 20% opacity for zones, horizontal rays for single levels, and a text label for the reason the line exists. Colour by meaning: green for support, red for resistance, blue for session ranges, grey for anything else. Never draw more than five zones on a chart. A chart with fifteen lines is a decoration, not a map.`),
@@ -146,7 +146,7 @@ export const M1: Record<string, Lesson> = {
     ],
   },
 
-  "1-7": {
+  "1-8": {
     goal: "Read the session map in CET, know when each candle closes, and avoid time-zone mistakes with your platform.",
     blocks: [
       p(`The same candle means different things at different hours. A hammer at 03:00 CET on thin trading is not the same as a hammer at 09:15 CET after the London open. Everything in this course is in CET, which is the time in Spain. Drag the slider to move through a day, or press the button to jump to the current time.`),
@@ -175,15 +175,15 @@ export const M1: Record<string, Lesson> = {
     ],
   },
 
-  "1-8": {
+  "1-9": {
     goal: "Have a written weekly study plan, a baseline for where you are, and realistic expectations for what this method can do.",
     blocks: [
-      p(`This course is 50 hours of guided study, not 50 hours of video. The time counts reading, interactive exercises, homework and practice on your own charts. Most of your learning will happen in the homework, which is deliberately hands-on. Skipping it is the most common reason people finish a course and cannot use it.`),
+      p(`This course is about 55 hours of guided study, not 55 hours of video. The time counts reading, interactive exercises, homework and practice on your own charts. Most of your learning will happen in the homework, which is deliberately hands-on. Skipping it is the most common reason people finish a course and cannot use it.`),
       h("The weekly rhythm"),
       table(["Pace","Hours per week","Finish in","Who it suits"],[
-        ["Steady","4","about 13 weeks","Working alongside a job"],
-        ["Faster","8","about 6 to 7 weeks","A fixed block of time"],
-        ["Intensive","12 to 15","about 4 weeks","Full-time study, with the risk of skipping practice"],
+        ["Steady","4","about 14 weeks","Working alongside a job"],
+        ["Faster","8","about 7 weeks","A fixed block of time"],
+        ["Intensive","12 to 15","about 4 to 5 weeks","Full-time study, with the risk of skipping practice"],
       ]),
       p(`The pace does not matter. Doing the homework does. If you only have time for half the lessons, do half the lessons properly.`),
       h("The method in one line"),
@@ -198,7 +198,7 @@ export const M1: Record<string, Lesson> = {
       hw(30, `Write your weekly plan: the days and hours you will study, your pace from the table, and the day you will review your screenshot folder. Then do the baseline exercise above. Save both in the same folder as your screenshots.`),
     ],
     qs: [
-      { k: "mc", q: "What does '50 hours' mean in this course?", o: ["50 hours of video", "50 hours of guided study including reading, exercises, homework and practice", "50 hours of live trading", "50 hours of lessons without homework"], ans: 1, ok: "It is study time, and the homework is a large part of it.", bad: "It counts the whole study process, not just watching." },
+      { k: "mc", q: "What does '55 hours' mean in this course?", o: ["55 hours of video", "55 hours of guided study including reading, exercises, homework and practice", "55 hours of live trading", "55 hours of lessons without homework"], ans: 1, ok: "It is study time, and the homework is a large part of it.", bad: "It counts the whole study process, not just watching." },
       { k: "mc", q: "When can you trade live money under this course?", o: ["After lesson 1", "After 100 logged signals and a demo period that agrees with them", "After the first profitable week", "Whenever you feel ready"], ans: 1, ok: "100 signals, then demo, then live at small risk.", bad: "The rule is data first, demo second, live last." },
       { k: "mc", q: "Why log every signal as a named screenshot?", o: ["To show others", "To build a personal data set you can measure", "Because the platform requires it", "To save disk space"], ans: 1, ok: "The library is your own evidence about your edge.", bad: "It becomes your data set." },
     ],

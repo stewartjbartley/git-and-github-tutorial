@@ -15,6 +15,7 @@ export async function SiteBar() {
         <nav>
           <Link href="/#curriculum">Curriculum</Link>
           <Link href="/course">My course</Link>
+          <Link href="/course/downloads">Downloads</Link>
           {signedIn ? (
             <form action="/api/auth/logout" method="post"><button className="btn">Sign out</button></form>
           ) : (

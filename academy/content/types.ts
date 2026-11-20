@@ -16,7 +16,8 @@ export type Block =
   | { t: "calc" }
   | { t: "clock" }
   | { t: "score" }
-  | { t: "sim" };
+  | { t: "sim" }
+  | { t: "dd" };
 
 export type Question =
   | { k: "click"; chart: string; ans: number; q: string; ok: string; bad: string; ref?: string }

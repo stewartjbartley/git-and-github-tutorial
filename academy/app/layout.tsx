@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 import { SiteBar } from "@/components/SiteBar";
+import { COURSE_HOURS } from "@/content/curriculum";
 
 export const metadata: Metadata = {
   title: { default: "Naked Chart School", template: "%s | Naked Chart School" },
-  description: "A 50-hour course on reading candlestick charts without indicators: candles, sweeps, sessions in CET and trade plans for forex, gold and indices.",
+  description: `A ${COURSE_HOURS}-hour course on reading candlestick charts without indicators: candles, sweeps, sessions in CET, trade plans, risk and funded accounts for forex, gold and indices.`,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

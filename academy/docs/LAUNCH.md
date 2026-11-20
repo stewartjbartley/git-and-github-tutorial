@@ -10,11 +10,11 @@ This is what stands between the code in this repo and a paying customer. Read it
 | Passwordless sign-in (one-time email link) | Built and tested |
 | Stripe Checkout with the EU withdrawal waiver | Built, tested against a signed test webhook, not tested against live Stripe |
 | Progress and quiz results saved per student | Built and tested |
-| 50-hour curriculum map (15 modules, 100 lessons) | Done, totals exactly 3,000 minutes |
-| Written lessons | Modules 1 to 5, 7, 10, 11, 12 and 15 (37 h): 70 lessons. See `docs/CURRICULUM.md` for the live status |
+| 55-hour curriculum map (15 modules, 103 lessons) | Done, totals 3,280 minutes (54.7 hours) |
+| Written lessons | 73 of 103 lessons, 38.7 of 54.7 hours. See `docs/CURRICULUM.md` for the live status |
 | Real-chart import from CSV | Built (`content/real/`), no real data supplied yet |
 
-**Only 37 of the 50 hours are written.** Do not market 50 hours as available today. Either finish more modules first, or sell it as a pre-launch with a clear release schedule. The sales page already says how many lessons are ready and marks modules as Ready.
+**Only 39 of the 55 hours are written.** Do not market 55 hours as available today. Either finish more modules first, or sell it as a pre-launch with a clear release schedule. The sales page already says how many lessons are ready and marks modules as Ready.
 
 ## Set-up checklist
 
@@ -28,7 +28,7 @@ This is what stands between the code in this repo and a paying customer. Read it
 
 ## Price
 
-I suggest EUR 197 to 297 for a 50-hour structured course, with a lower founding price while fewer than all modules are written. Courses with real-chart libraries and strong outcomes sit higher. This is a market judgement, not data. Compare three similar courses and set it yourself. Change the price in Stripe only.
+I suggest EUR 197 to 297 for a structured course of this length, with a lower founding price while fewer than all modules are written. Courses with real-chart libraries and strong outcomes sit higher. This is a market judgement, not data. Compare three similar courses and set it yourself. Change the price in Stripe only.
 
 ## Legal and regulatory: get this reviewed
 
@@ -46,7 +46,7 @@ I am not a lawyer and `/legal` is a template with a warning box on it. Before la
 ## Claims on the sales page you must be able to keep
 
 - "Lifetime access to updates to existing lessons" is a promise. Remove it if you do not want it.
-- "50 hours" is guided study including homework, and the page says so.
+- "55 hours" is guided study including homework, and the page says so. The figure is computed from the curriculum on the sales page, and hard-coded in lesson 1.9, which `scripts/check-content.ts` checks.
 - The charts are teaching charts. The page says so. Replace them with real charts over time using the CSV import.
 
 ## Swapping in real charts
@@ -59,8 +59,12 @@ I am not a lawyer and `/legal` is a template with a warning box on it. Before la
 
 Lessons live in `content/lessons/mN.ts`. Add a file, export a record keyed by slug (for example `"3-1"`), register it in `content/lessons/index.ts`. Each lesson is a list of blocks plus 3 to 8 quiz questions. The curriculum map, sales page, dashboard and "Ready" badges update on their own. A lesson with no content shows "being written".
 
-Still to write: Modules 6, 8, 9, 13 and 14 (momentum, structure, zones, market playbooks, practice lab and capstone), 13 hours in total. Each module is about 3 to 4.5 hours of material.
+Still to write: Modules 6, 8, 9, 13 and 14 (momentum, structure, zones, market playbooks, practice lab and capstone), 16.0 hours in total.
 
 ## Not built
 
 Video hosting, certificates, a student community, an admin dashboard (use Stripe and Prisma Studio), affiliate tracking, team licences, and receipts beyond Stripe's own. Add them when customers ask.
+
+## Downloadable PDFs
+
+Ten printable PDFs live in `private/pdfs/` and are served only to paying students through `/api/downloads/[id]` (a signed-in student without a purchase is sent to checkout). They are built by `scripts/build-pdfs.ts`, which reuses the lesson chart engine, so edit the lesson, then run `NODE_PATH=$(npm root -g) npx tsx scripts/build-pdfs.ts` after installing Playwright (`npm i -D playwright && npx playwright install chromium`). Add a PDF by adding a document to the script and an entry in `content/downloads.ts` naming the lessons that offer it. The PDFs contain the same rules as the lessons, so rebuild them whenever you change a rule.
