@@ -38,12 +38,12 @@ The doji family, the three places a doji can sit, and how to trade the answer.
 
 | # | Lesson | Min | Status |
 |---|---|---|---|
-| 3.1 | What indecision looks like | 25 | Planned |
-| 3.2 | The doji family one by one | 30 | Planned |
-| 3.3 | Doji after a run: the pause | 30 | Planned |
-| 3.4 | Doji at a level: the rejection | 35 | Planned |
-| 3.5 | Clusters and compression | 30 | Planned |
-| 3.6 | Trading dojis: triggers, stops and targets | 30 | Planned |
+| 3.1 | What indecision looks like | 25 | Written |
+| 3.2 | The doji family one by one | 30 | Written |
+| 3.3 | Doji after a run: the pause | 30 | Written |
+| 3.4 | Doji at a level: the rejection | 35 | Written |
+| 3.5 | Clusters and compression | 30 | Written |
+| 3.6 | Trading dojis: triggers, stops and targets | 30 | Written |
 
 ## Module 4: Rejection candles: pin bars and long wicks (4 h)
 
@@ -51,13 +51,13 @@ Hammers, shooting stars and wick clusters, graded with four tests.
 
 | # | Lesson | Min | Status |
 |---|---|---|---|
-| 4.1 | Anatomy of a pin bar | 30 | Planned |
-| 4.2 | The four tests | 35 | Planned |
-| 4.3 | Hammers at support | 35 | Planned |
-| 4.4 | Shooting stars at resistance | 35 | Planned |
-| 4.5 | Wick clusters and absorption | 35 | Planned |
-| 4.6 | Entry methods compared | 35 | Planned |
-| 4.7 | Trend pullback pins and reversal pins | 35 | Planned |
+| 4.1 | Anatomy of a pin bar | 30 | Written |
+| 4.2 | The four tests | 35 | Written |
+| 4.3 | Hammers at support | 35 | Written |
+| 4.4 | Shooting stars at resistance | 35 | Written |
+| 4.5 | Wick clusters and absorption | 35 | Written |
+| 4.6 | Entry methods compared | 35 | Written |
+| 4.7 | Trend pullback pins and reversal pins | 35 | Written |
 
 ## Module 5: Sweep candles and liquidity (4.5 h)
 
@@ -65,14 +65,14 @@ How price takes the stops at obvious levels and what to do next.
 
 | # | Lesson | Min | Status |
 |---|---|---|---|
-| 5.1 | Where the stops are | 30 | Planned |
-| 5.2 | Anatomy of a sweep | 35 | Planned |
-| 5.3 | Equal highs, equal lows and double tops | 35 | Planned |
-| 5.4 | Previous day and week highs and lows | 35 | Planned |
-| 5.5 | Sweep or breakout | 40 | Planned |
-| 5.6 | Entries, stops and targets for sweeps | 35 | Planned |
-| 5.7 | Failed sweeps and when they become breakouts | 30 | Planned |
-| 5.8 | Sweeps in the sessions: Asia and London | 30 | Planned |
+| 5.1 | Where the stops are | 30 | Written |
+| 5.2 | Anatomy of a sweep | 35 | Written |
+| 5.3 | Equal highs, equal lows and double tops | 35 | Written |
+| 5.4 | Previous day and week highs and lows | 35 | Written |
+| 5.5 | Sweep or breakout | 40 | Written |
+| 5.6 | Entries, stops and targets for sweeps | 35 | Written |
+| 5.7 | Failed sweeps and when they become breakouts | 30 | Written |
+| 5.8 | Sweeps in the sessions: Asia and London | 30 | Written |
 
 ## Module 6: Momentum candles and follow-through (3 h)
 
@@ -195,4 +195,4 @@ Replay practice, a 100-signal backtest, review, demo rules, and your own trading
 | 14.4 | Demo trading rules | 30 | Planned |
 | 14.5 | Capstone: your trading plan | 45 | Planned |
 
-**Total: 50 hours, 3000 minutes.** Written lessons: 15.
+**Total: 50 hours, 3000 minutes.** Written: 36 lessons, 19 hours.

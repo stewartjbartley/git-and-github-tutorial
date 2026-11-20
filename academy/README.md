@@ -14,3 +14,5 @@ Local testing without paying: set `DEV_UNLOCK_ALL=1` in `.env`. Without `RESEND_
 - `content/curriculum.ts` is the 14-module map. `docs/CURRICULUM.md` is the readable version.
 - `content/lessons/` holds the written lessons. `content/charts.ts` holds the teaching charts. `content/real/` is for real CSV data.
 - `docs/LAUNCH.md` is the launch checklist, including legal points to get reviewed.
+
+Before committing content, run `npx tsx scripts/check-content.ts`. It checks every quiz answer index, chart id and that homework fits inside each lesson's minutes.

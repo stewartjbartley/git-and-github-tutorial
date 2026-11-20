@@ -9,3 +9,6 @@ export const hw = (minutes: number, html: string): Block => ({ t: "hw", minutes,
 export const fig = (id: string, cap: string, bare = false): Block => ({ t: "fig", id, cap, bare });
 export const table = (head: string[], rows: string[][]): Block => ({ t: "table", head, rows });
 export const gallery = (items: [string, string, string][]): Block => ({ t: "gallery", items });
+
+export const builder = (n: 1 | 2): Block => ({ t: "builder", n });
+export const score = (): Block => ({ t: "score" });
