@@ -9,7 +9,7 @@ export default async function Home() {
   const price = await getPriceLabel();
   const lessonCount = MODULES.reduce((a, m) => a + m.lessons.length, 0);
   const readyCount = Object.keys(LESSONS).length;
-  const readyMods = MODULES.filter((m) => m.lessons.every((l) => LESSONS[l.slug]));
+  const readyMods = MODULES.filter((m) => m.lessons.every((l) => LESSONS[l.slug])).map((m) => m.no);
 
   return (
     <main className="wide">
@@ -47,7 +47,7 @@ export default async function Home() {
 
       <section className="section" id="curriculum">
         <h2>The curriculum</h2>
-        <p>{readyCount} of {lessonCount} lessons are ready now ({readyMods.map((m) => `Module ${m.no}`).join(" and ") || "none yet"}). The rest are released in order, and every module is included in the price.</p>
+        <p>{readyCount} of {lessonCount} lessons are ready now, in {readyMods.length} of {MODULES.length} modules (marked Ready below). The rest are released in order, and every module is included in the price.</p>
         <div style={{ marginTop: 16 }}>
           {MODULES.map((m) => {
             const ready = m.lessons.every((l) => LESSONS[l.slug]);

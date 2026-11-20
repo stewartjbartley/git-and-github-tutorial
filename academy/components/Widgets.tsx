@@ -86,7 +86,7 @@ const SCORE_ITEMS = [
 export function ScoreCard() {
   const [on, setOn] = useState<boolean[]>(SCORE_ITEMS.map(() => false));
   const s = on.filter(Boolean).length;
-  const g = s === 6 ? "A. Take it at full size." : s === 5 ? "B. Take it at half size." : s === 4 ? "C. Watch it, do not trade it." : "No trade.";
+  const g = !on[0] ? "No trade. Location is mandatory: without a place the candle is only a shape." : !on[5] ? "No trade. The risk rule is mandatory." : s === 6 ? "A. Take it at full size." : s === 5 ? "B. Take it at half size." : s === 4 ? "C. Watch it, do not trade it." : "No trade.";
   return (
     <div className="score-card">
       {SCORE_ITEMS.map(([b, t], i) => (

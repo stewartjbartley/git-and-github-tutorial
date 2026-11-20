@@ -1,0 +1,210 @@
+import type { Lesson } from "../types";
+import { p, h, rule, ol, hw, fig, table, score } from "./h";
+
+export const M11: Record<string, Lesson> = {
+  "11-1": {
+    goal: "Write a complete trade plan before any order, using the same four parts every time: level, story, time and plan.",
+    blocks: [
+      p(`Every trade in this course reduces to one structure. There is a <b>level</b> (a place where price has reason to react), a <b>story</b> (a candle or pair that records what happened there), a <b>time</b> (a window where the signal has weight) and a <b>plan</b> (trigger, stop, target and size). If you cannot fill all four in before you click, you do not have a trade.`),
+      table(["Part","Question","Example"],[
+        ["<b>Level</b>","Where is price, and why might it react here?","Support at the old low 1.0824 to 1.0830"],
+        ["<b>Story</b>","What did the candle record?","A hammer: lower prices were rejected"],
+        ["<b>Time</b>","Is it a live window?","09:40 CET, in the London open window"],
+        ["<b>Plan</b>","Trigger, stop, target, size","Buy above 1.0832, stop 1.0822, target 1.0852 (2R), 0.4 lots"],
+      ]),
+      h("The trade plan card"),
+      p(`Write the plan on a card or in your journal before entry. The fields do not change from trade to trade.`),
+      ol(
+        `Date, time (CET), instrument, timeframe.`,
+        `Setup name (1 to 5) and the signal candle.`,
+        `The level and why it matters.`,
+        `Bias from the 4-hour and Daily structure.`,
+        `Trigger price, stop price and distance in pips.`,
+        `Target price, distance and reward-to-risk.`,
+        `Position size and money at risk.`,
+        `Exit rule if the idea fails before the stop (for example, close beyond the sweep extreme).`,
+        `Scorecard total out of six.`,
+      ),
+      p(`The card does two jobs. It stops you taking trades you cannot describe, and it creates a record you can review later without hindsight. A plan written before the trade is evidence. A plan written afterwards is a story.`),
+      rule(`No card, no order. If any field is empty, you do not have a trade yet.`),
+      hw(30, `Write ten trade plan cards for setups you can see on current charts. Do not trade them. Check each against the four parts. How many have a time that is a live window? How many have a target at least 2R away?`),
+    ],
+    qs: [
+      { k: "mc", q: "Which of these is NOT one of the four parts of a plan?", o: ["Level", "Story", "Time", "Hunch"], ans: 3, ok: "The four parts are level, story, time and plan.", bad: "The four parts are level, story, time and plan." },
+      { k: "mc", q: "When should the plan be written?", o: ["After the trade", "Before the order", "Only when you lose", "Never"], ans: 1, ok: "A plan before entry is evidence. After it, a story.", bad: "Before." },
+      { k: "mc", q: "Entry 1.0832, stop 1.0822, target 1.0852. What is the reward-to-risk?", o: ["1 : 1", "2 : 1", "3 : 1", "1 : 2"], ans: 1, ok: "Risk 10, reward 20.", bad: "Reward divided by risk." },
+      { k: "mc", q: "Why include an exit rule beyond the stop?", o: ["To exit sooner when the idea is invalid, such as a close beyond the sweep extreme", "To avoid stops", "To increase size", "It is optional"], ans: 0, ok: "The story can fail before the stop is hit.", bad: "Plans include when the idea is wrong." },
+    ],
+  },
+
+  "11-2": {
+    goal: "Run Setup 1, the pin bar or doji at a level, from signal to plan, and know when to skip it.",
+    blocks: [
+      p(`Setup 1 is the most common setup in the course. A pin bar or doji forms at a place, and the break of its far side is the trigger. It combines Modules 3 and 4 with a level from Module 9.`),
+      fig("hammer", "A hammer at the old low. Entry 1.0833, stop 1.0822, target 1.0855. Risk 11, reward 22, so 2R."),
+      fig("dojiRev", "A gravestone doji at resistance. Entry 1.0828, stop 1.0836, target 1.0812. Risk 8, reward 16, so 2R."),
+      table(["Piece","Rule"],[
+        ["<b>Level</b>","A zone, swing high or low, or session extreme that price has respected."],
+        ["<b>Story</b>","A pin bar that passes the four tests, or a doji with a long wick toward the level, after a run into it."],
+        ["<b>Time</b>","A live window: 09:00 to 11:00 or 14:30 to 17:30 CET."],
+        ["<b>Trigger</b>","A stop order beyond the signal candle's far side."],
+        ["<b>Stop</b>","Just beyond the wick tip."],
+        ["<b>Target</b>","The next zone or at least 2R."],
+        ["<b>Skip if</b>","The wick sits in empty space. The close is on the wrong side. The wick is so long that 2R is beyond the next zone. A big news release is due within 30 minutes."],
+      ]),
+      h("Common mistakes"),
+      ol(
+        `Entering on the close of the signal candle with no trigger.`,
+        `Placing the stop at the body instead of beyond the wick.`,
+        `Treating every doji with a wick as a signal. Check for a level and a run into it.`,
+        `Taking the signal against a strong 4-hour trend without reducing size.`,
+      ),
+      rule(`Setup 1 is a level, a rejection candle and a trigger beyond it. The skip list is as important as the setup.`),
+      hw(30, `Find five Setup 1 signals in your library. Write a trade card for each before you check the result. Score each in R. Add the failures to the skip list.`),
+    ],
+    qs: [
+      { k: "click", chart: "hammer", ans: 17, q: "Click the signal candle.", ok: "The hammer at the old low.", bad: "The small body on a long lower wick near the shaded zone." },
+      { k: "mc", q: "Where does the stop go on Setup 1?", o: ["Beyond the signal candle's wick tip", "At the body", "At the entry", "At the zone's centre"], ans: 0, ok: "Beyond the wick tip.", bad: "The tip is where the story fails." },
+      { k: "mc", q: "Which is a reason to skip Setup 1?", o: ["The pin bar sits at a level", "The wick is in empty space with no nearby level", "It formed at 09:30 CET", "It is a hammer"], ans: 1, ok: "No place, no signal.", bad: "Place decides." },
+      { k: "mc", q: "Why not enter at the close of the signal candle?", o: ["It is forbidden", "The trigger beyond the candle is the proof that the move is real", "It costs more", "Brokers refuse"], ans: 1, ok: "The break is the proof.", bad: "Proof matters." },
+    ],
+  },
+
+  "11-3": {
+    goal: "Run Setup 2, sweep and reclaim, timed to the London open or the US open.",
+    blocks: [
+      p(`Setup 2 uses the sweep candle from Module 5 in a specific window. A level has been marked in advance (the Asian range, yesterday's high or low, or the London extreme). During a live window, price trades through it and closes back inside. The trade is the move back.`),
+      fig("londonSweep", "London sweeps the Asian low at 09:15 CET. Entry at the close 1.08485, stop 1.0840, target 1.08655. Risk 8.5, reward 17, so 2R."),
+      fig("sweepLow", "A sweep of equal lows during the day. Entry at the close 1.0843, stop 1.0833, target 1.0863. Risk 10, reward 20, so 2R."),
+      table(["Piece","Rule"],[
+        ["<b>Level</b>","Marked before the window opens: equal highs or lows, previous day high or low, Asian range, London high or low."],
+        ["<b>Story</b>","A candle wicks beyond the level and closes back inside."],
+        ["<b>Time</b>","09:00 to 11:00 for Asian and previous-day levels, 15:30 to 17:30 for London levels."],
+        ["<b>Entry</b>","At the close of the sweep candle (smallest stop), or above or below its far extreme (more proof)."],
+        ["<b>Stop</b>","Beyond the sweep's extreme."],
+        ["<b>Target</b>","The opposite side of the range, or 2R, whichever is the first obvious pool."],
+        ["<b>Exit</b>","If the next candle closes beyond the sweep's extreme, exit."],
+        ["<b>Skip if</b>","You cannot name the level swept. The close is not clearly back inside. The spread is large against the stop."],
+      ]),
+      p(`This setup demands the most discipline because the entry candle is often dramatic and the temptation is to enter on the wick. Do not. The close is the signal. Entering before it risks the case where the wick keeps going and becomes a breakout.`),
+      rule(`Level first, close back inside second, entry third. The exit rule is part of the plan.`),
+      hw(35, `Over five London opens, mark the Asian range before 09:00 CET and write a trade card for any sweep you see. Do not trade it. At the end of the week, score the cards in R.`),
+    ],
+    qs: [
+      { k: "click", chart: "londonSweep", ans: 13, q: "Click the signal candle.", ok: "The 09:15 candle that swept the Asian low and closed back inside.", bad: "The candle with the very long lower wick after the open." },
+      { k: "mc", q: "When is the level marked?", o: ["After the sweep", "Before the window opens", "Never", "At the close of the sweep"], ans: 1, ok: "In advance.", bad: "Planning beats hindsight." },
+      { k: "mc", q: "The next candle closes beyond the sweep's extreme. What do you do?", o: ["Hold", "Exit: it has turned into a breakout", "Add", "Remove the stop"], ans: 1, ok: "The exit rule.", bad: "The sweep failed." },
+      { k: "mc", q: "Why not enter on the wick?", o: ["It is rude", "The close is the signal. The wick may keep going and become a breakout", "It costs more", "Brokers block it"], ans: 1, ok: "Wait for the close.", bad: "Only the close back inside is the signal." },
+    ],
+  },
+
+  "11-4": {
+    goal: "Run Setup 3, break and retest, with a wide breakout candle and a retest that holds.",
+    blocks: [
+      p(`Setup 3 uses momentum and follow-through from Module 6 and the flip of a zone from Module 9. Price breaks a level with a wide-range candle, comes back to test it from the other side, and holds. The trade is the hold.`),
+      fig("retest", "A wide breakout candle closes at 1.0859, well beyond the old resistance zone. Price returns, the retest candle dips to 1.0850 inside the zone and closes at 1.0856. Entry 1.0856, stop 1.0849, target 1.0870. Risk 7, reward 14, so 2R. Price reaches the target four candles later."),
+      table(["Piece","Rule"],[
+        ["<b>Level</b>","A zone that has been tested several times."],
+        ["<b>Breakout</b>","A wide-range candle closes beyond the zone, with a body of 60% or more of its range."],
+        ["<b>Retest</b>","Price returns to the zone within a few candles. The retest candle wicks into the zone and closes back beyond it."],
+        ["<b>Time</b>","A live window."],
+        ["<b>Entry</b>","At the close of the retest candle, or above its high."],
+        ["<b>Stop</b>","Beyond the retest wick."],
+        ["<b>Target</b>","The next zone or 2R."],
+        ["<b>Skip if</b>","The breakout candle was not wide, so the breakout is weak. The retest closes back inside the zone. There is no retest and price runs away (that is a missed trade, not a trade)."],
+      ]),
+      p(`The most common mistake is chasing the breakout candle. The retest gives a lower-risk entry with a tight stop. If price never returns, you miss the trade, and that is fine. Missed trades cost nothing.`),
+      fig("trueBreak", "A cleaner example of the breakout half: a wide candle closing beyond 1.0840 and two candles holding above half of its body.", true),
+      rule(`Wide breakout, retest that holds, entry on the hold. If there is no retest, there is no trade.`),
+      hw(30, `Find eight break-and-retest sequences on the 4-hour. For each, write the entry, stop and target before you reveal what happened. How often did the retest actually come, and how often did it hold?`),
+    ],
+    qs: [
+      { k: "click", chart: "retest", ans: 23, q: "Click the retest candle that held the old resistance.", ok: "Its wick dipped to 1.0850 inside the zone and it closed at 1.0856, above it.", bad: "After the breakout, the candle with the long lower wick into the zone." },
+      { k: "mc", q: "Entry 1.0856, stop 1.0849, target 1.0870. What is the reward-to-risk?", o: ["1 : 1", "2 : 1", "3 : 1", "1.5 : 1"], ans: 1, ok: "Risk 7, reward 14.", bad: "Divide reward by risk." },
+      { k: "mc", q: "Price breaks out and never returns. What have you got?", o: ["A trade you must chase", "A missed trade, which costs nothing", "A losing trade", "A sweep"], ans: 1, ok: "No retest, no trade.", bad: "No entry, no loss." },
+      { k: "mc", q: "The retest candle closes back inside the zone. What do you do?", o: ["Enter anyway", "Skip: the hold failed", "Double the size", "Move the stop"], ans: 1, ok: "The retest must hold.", bad: "Closing back inside means failure." },
+    ],
+  },
+
+  "11-5": {
+    goal: "Run Setup 4, the inside-bar break, with the trend and with a stop beyond the mother bar or the inside bar.",
+    blocks: [
+      p(`Setup 4 uses compression from Modules 3 and 7. A mother bar is followed by an inside bar. The trade is the break of the mother bar in the direction of the larger trend.`),
+      fig("insideTrade", "The mother bar spans 1.0819 to 1.0831. The inside bar stays within it. Entry 1.0832, stop 1.0822 below the inside bar's low, target 1.0852. Risk 10, reward 20, so 2R."),
+      table(["Piece","Rule"],[
+        ["<b>Level</b>","The mother bar's high or low, ideally near a zone or the end of a pullback."],
+        ["<b>Story</b>","An inside bar: compression, with the trend as the bias."],
+        ["<b>Time</b>","A live window."],
+        ["<b>Trigger</b>","A stop order one pip beyond the mother bar's extreme, in the trend's direction."],
+        ["<b>Stop</b>","The inside bar's far side (tighter) or the mother bar's far side (safer)."],
+        ["<b>Target</b>","The next zone or 2R."],
+        ["<b>Skip if</b>","The mother bar is more than about twice the average candle. The break would be against the trend. Price is already far from its last pullback."],
+      ]),
+      p(`The choice of stop is a trade-off you decide in advance. A tight stop under the inside bar gives a small risk and more stop-outs. A stop under the mother bar gives a larger risk with fewer stop-outs. On the chart, the first needs a 2R target of 1.0852 and the second needs 1.0860. Pick one and record it.`),
+      rule(`Inside bar, trend bias, stop order beyond the mother bar. Skip huge mother bars and counter-trend breaks.`),
+      hw(30, `Find eight inside bar setups. For each, record trend direction, mother bar size, which stop you would use and the result in R under both stop choices.`),
+    ],
+    qs: [
+      { k: "click", chart: "insideTrade", ans: 6, q: "Click the inside bar.", ok: "It sits entirely within the mother bar's range.", bad: "The small candle inside the large one." },
+      { k: "mc", q: "In an uptrend, which break do you trade?", o: ["Below the mother low", "Above the mother high", "Both", "Neither"], ans: 1, ok: "With the trend.", bad: "Bias from the structure." },
+      { k: "mc", q: "Entry 1.0832, stop 1.0822. Where is 2R?", o: ["1.0842", "1.0852", "1.0862", "1.0832"], ans: 1, ok: "Risk 10, twice is 20: 1.0852.", bad: "Add twice the risk." },
+      { k: "mc", q: "When do you skip an inside bar?", o: ["When the mother bar is huge", "When it is small", "Never", "Always"], ans: 0, ok: "A huge mother bar makes the stop too far.", bad: "Check the risk." },
+    ],
+  },
+
+  "11-6": {
+    goal: "Run Setup 5, the engulfing candle at a pullback in a trend.",
+    blocks: [
+      p(`Setup 5 combines Module 7's engulfing candle with Module 8's trend and pullback. In an uptrend, price pulls back for a few candles, and a bullish engulfing candle covers the pullback's last bodies. The trade is the continuation.`),
+      fig("engulfTrade", "A shallow pullback in an uptrend, then a bullish engulfing candle. Entry 1.0864 above its high, stop 1.0852 below its low, target 1.0888. Risk 12, reward 24, so 2R."),
+      table(["Piece","Rule"],[
+        ["<b>Level</b>","The end of a pullback near a prior breakout, zone or swing."],
+        ["<b>Story</b>","A bullish engulfing candle covering at least one, ideally two bodies, closing in the top fifth."],
+        ["<b>Time</b>","A live window."],
+        ["<b>Trigger</b>","A stop order just above the engulfing candle's high."],
+        ["<b>Stop</b>","Below the engulfing candle's low or the pullback's low."],
+        ["<b>Target</b>","The previous swing or 2R."],
+        ["<b>Skip if</b>","The pullback was deep with big bearish candles. The engulfing candle is huge so that 2R is beyond the next zone. It is against the 4-hour trend."],
+      ]),
+      p(`Notice that the stop is large relative to the pullback: it includes the whole engulfing candle. Many engulfing signals fail the 2R test for this reason. If 2R takes you through a zone, skip.`),
+      rule(`Engulfing at a pullback, in the trend, with room. A big engulfing candle is its own reason to skip.`),
+      hw(30, `Find eight bullish or bearish engulfing candles at pullbacks. Check the stop distance and whether 2R fits before the next zone. How many survive the room test?`),
+    ],
+    qs: [
+      { k: "click", chart: "engulfTrade", ans: 7, q: "Click the engulfing candle.", ok: "Candle 8, covering the small bearish bodies before it.", bad: "The bullish candle at the end of the pullback." },
+      { k: "mc", q: "Entry 1.0864, stop 1.0852, target 1.0888. Reward-to-risk?", o: ["1 : 1", "2 : 1", "3 : 1", "4 : 1"], ans: 1, ok: "Risk 12, reward 24.", bad: "Reward divided by risk." },
+      { k: "mc", q: "Why do many engulfing signals fail the room test?", o: ["They are rare", "The stop covers the whole engulfing candle, so 2R may run through a zone", "They are bearish", "They lack wicks"], ans: 1, ok: "A big candle means a big stop.", bad: "Think about the stop." },
+      { k: "mc", q: "The pullback had big bearish candles with little overlap. What do you do?", o: ["Take the engulfing as normal", "Skip it: the pullback was not healthy", "Double the size", "Ignore the trend"], ans: 1, ok: "Not a healthy pullback.", bad: "Check trend health." },
+    ],
+  },
+
+  "11-7": {
+    exam: true,
+    goal: "Score every signal with the six-point scorecard, choose between setups, and complete the module test.",
+    blocks: [
+      p(`Now you have five setups, and you will often see several signals at once. The scorecard makes the choice mechanical. Tick each box honestly. The score sets the size, not your confidence.`),
+      score(),
+      h("Three examples"),
+      table(["Signal","Place","Trend","Candle","Time","Room","Risk","Score"],[
+        ["Hammer at old low, 09:40 CET, 2.1R to next zone","Yes","Yes","Yes","Yes","Yes","Yes","6: A, full size"],
+        ["Engulfing at 12:30 CET, in line with the 4H trend, 1.4R to the next zone","Yes","Yes","Yes","No","No","Yes","4: C, no trade"],
+        ["Pin bar in empty space, 15:45 CET, with the trend, 3R of room","No","Yes","Yes","Yes","Yes","Yes","5: B, but place failed. Skip."],
+      ]),
+      p(`The third example shows a rule within the rule: <b>Place is mandatory</b>. A score of five that fails Place is still a skip. In practice the scorecard grade applies only if Place and Risk are both ticked.`),
+      h("Choosing between setups"),
+      p(`When two signals appear together, prefer the one with the higher score. If they score the same, prefer the one with the smaller stop, because it leaves more room for 2R. Never take more than two positions at once, and never take two highly correlated ones (for example, long EUR/USD and long GBP/USD) as if they were separate risks.`),
+      hw(25, `Score 15 signals from your library with the card before you reveal the outcomes. Compute the average R by score. If A-grade signals do not do better than C-grade ones on your data, record that too.`),
+    ],
+    qs: [
+      { k: "click", chart: "retest", ans: 23, ref: "11-4", q: "Click the retest candle.", ok: "The retest that held the zone.", bad: "The candle with the long lower wick into the zone after the breakout." },
+      { k: "click", chart: "insideTrade", ans: 6, ref: "11-5", q: "Click the inside bar.", ok: "It sits within the mother bar.", bad: "The small candle inside the large one." },
+      { k: "click", chart: "engulfTrade", ans: 7, ref: "11-6", q: "Click the engulfing candle.", ok: "It covers the small bearish bodies.", bad: "The bullish candle after the pullback." },
+      { k: "mc", ref: "11-1", q: "Which four parts does every plan have?", o: ["Level, story, time, plan", "Hope, fear, luck, plan", "Open, high, low, close", "Entry, exit, stop, loss"], ans: 0, ok: "Level, story, time and plan.", bad: "Level, story, time and plan." },
+      { k: "mc", ref: "11-2", q: "Where does the stop go on a pin bar setup?", o: ["Beyond the wick tip", "At the entry", "In the body", "At the zone centre"], ans: 0, ok: "Beyond the wick tip.", bad: "Where the story fails." },
+      { k: "mc", ref: "11-3", q: "The next candle closes beyond the sweep's extreme. What do you do?", o: ["Hold", "Exit", "Add", "Widen the stop"], ans: 1, ok: "The sweep became a breakout.", bad: "Exit on the close." },
+      { k: "mc", ref: "11-4", q: "Price breaks out and never returns. What do you have?", o: ["A trade", "A missed trade, which costs nothing", "A loss", "A sweep"], ans: 1, ok: "No retest, no trade.", bad: "No entry, no loss." },
+      { k: "mc", ref: "11-5", q: "In an uptrend, which inside bar break do you trade?", o: ["Below the mother low", "Above the mother high", "Either", "Neither"], ans: 1, ok: "With the trend.", bad: "Bias from the structure." },
+      { k: "mc", ref: "11-7", q: "A signal scores five of six but fails Place. What do you do?", o: ["Take it at half size", "Skip it: Place is mandatory", "Take it at full size", "Double it"], ans: 1, ok: "Place is mandatory.", bad: "A signal without a place is a shape." },
+    ],
+  },
+};

@@ -1,0 +1,200 @@
+import type { Lesson } from "../types";
+import { p, h, rule, warn, ol, hw, table } from "./h";
+
+export const M12: Record<string, Lesson> = {
+  "12-1": {
+    goal: "Size every trade from the stop so that a loss costs a fixed, small percentage of your account.",
+    blocks: [
+      p(`Position size is the one number you fully control. You do not control where price goes. You do control how much you lose if you are wrong, and that is set by the stop distance and the size together. The method has three steps and never changes.`),
+      ol(
+        `Decide the money you will risk: account balance times risk percentage (for example 1%).`,
+        `Measure the stop distance in pips or points, from the entry to the stop.`,
+        `Position size equals the money at risk divided by (stop distance times the value of one pip or point per lot).`,
+      ),
+      { t: "calc" },
+      h("Worked examples"),
+      table(["Market","Risk","Stop","Value per unit","Size"],[
+        ["<b>EUR/USD</b>, 10,000 EUR account","1% = 100 EUR","20 pips","About 9.2 EUR per pip per lot (10 USD at 1.0850)","100 / (20 x 9.2) = about 0.54 lots"],
+        ["<b>DAX CFD</b>","100 EUR","40 points","Typically 1 EUR per point per contract","100 / 40 = 2.5 contracts"],
+        ["<b>Gold (XAU/USD)</b>","100 USD","5 USD","Often 100 USD per 1 USD move per lot","100 / (5 x 100) = 0.2 lots"],
+      ]),
+      p(`The values per pip or point vary by broker and instrument. Always check the contract specification you saved in lesson 1.2 before you size a trade. A wrong pip value is the most common sizing error.`),
+      h("Margin is not risk"),
+      p(`Margin is the deposit your broker holds against the position. Risk is the loss if the stop is hit. A trade can use little margin and risk a lot, if the stop is far away. It can also use a lot of margin and risk little, if the stop is tight. Never size from margin. Size from the stop.`),
+      warn(`Risk 1% or less per trade while you learn. Many traders who survive years use 0.5% to 1%. With 1% risk a run of ten losses costs about 10% of the account. With 5% risk the same run costs about 40%.`),
+      rule(`Size from the stop, never the stop from the size. If the stop is too wide for the size you want, the answer is a smaller size or no trade.`),
+      hw(30, `For each of your two instruments, write the exact size formula from its contract specification. Then size five of your trade plan cards using a 1% risk and a 10,000 account. Check your answers by hand.`),
+    ],
+    qs: [
+      { k: "mc", q: "Balance 5,000, risk 1%, stop 25 pips, pip value 10 per lot. What size?", o: ["0.1 lots", "0.2 lots", "0.5 lots", "1 lot"], ans: 1, ok: "Risk 50. 50 / (25 x 10) = 0.2 lots.", bad: "Size = money at risk / (stop in pips x pip value)." },
+      { k: "mc", q: "DAX CFD at 1 EUR per point. Risk 100 EUR, stop 40 points. What size?", o: ["1 contract", "2.5 contracts", "4 contracts", "40 contracts"], ans: 1, ok: "100 / 40 = 2.5 contracts.", bad: "Money at risk divided by stop points." },
+      { k: "mc", q: "Is margin the same as risk?", o: ["Yes", "No: margin is the deposit held, risk is the loss at the stop", "Only for indices", "Only on Mondays"], ans: 1, ok: "Size from the stop.", bad: "Margin is a deposit." },
+      { k: "mc", q: "The stop you want makes the size too large for your risk limit. What do you do?", o: ["Widen the risk", "Reduce the size or skip the trade", "Remove the stop", "Add leverage"], ans: 1, ok: "The stop sets the size.", bad: "Never fit the stop to the size you want." },
+    ],
+  },
+
+  "12-2": {
+    goal: "Place stops where the idea fails, set targets that make the numbers work, and decide in advance how you will manage a winning trade.",
+    blocks: [
+      p(`A stop is where your idea is proved wrong. A target is where you expect to be paid. Management is what you do between them. All three are decisions you make before you enter, not after.`),
+      table(["Signal","Stop goes","Why"],[
+        ["Pin bar, hammer or star","Beyond the wick tip","If price gets there, the rejection failed."],
+        ["Doji","Beyond the doji's opposite side, or its wick at a level","The question was answered the other way."],
+        ["Sweep","Beyond the sweep extreme","A close beyond it makes it a breakout."],
+        ["Engulfing","Beyond the engulfing candle's extreme","The pattern is invalid once taken out."],
+        ["Inside bar","Inside bar's far side or the mother bar's far side","Compression resolved the other way."],
+        ["Retest hold","Beyond the retest wick","The level did not hold."],
+      ]),
+      p(`Add a small buffer for the spread, a pip or two. Never place a stop inside the wick it is meant to sit beyond. A stop in the noise is a donation.`),
+      h("Targets"),
+      p(`Choose the first target before you enter. Use the nearest obvious pool or zone, or 2R, whichever is closer. If the nearest zone is closer than 2R, the setup fails the room test and you skip it. Do not stretch a target to make a trade acceptable.`),
+      h("Managing a winner"),
+      table(["Method","How","Trade-off"],[
+        ["<b>Fixed target</b>","Exit all at the target","Simple. May leave a larger move."],
+        ["<b>Partial at 1R</b>","Take half at 1R, move the stop to breakeven, aim the rest at 2R or more","Locks something in. Reduces the average reward on big winners."],
+        ["<b>Trail under structure</b>","Move the stop beyond each new swing low (for longs)","Captures trends. Gets stopped in pullbacks."],
+      ]),
+      p(`No method is best in general. Each changes the shape of your results, and only your own data tells you which suits your setups. Pick one, apply it to 50 trades, then compare with the others.`),
+      warn(`Never move a stop further away from the entry. Moving a stop to breakeven or into profit is fine. Moving it away from price turns a 1R loss into a 2R or 5R loss and breaks every calculation in your journal.`),
+      rule(`Stop where the idea fails, target at the nearest obvious pool or 2R, and decide your management method before entry. Only ever move a stop toward profit.`),
+      hw(30, `Take 20 trades from your library and replay each with three methods: fixed 2R, partial at 1R with breakeven, and a structure trail. Total the results in R. Record which suits your market.`),
+    ],
+    qs: [
+      { k: "mc", q: "Where does the stop go for a sweep trade?", o: ["Beyond the sweep extreme", "At the entry", "Inside the wick", "At the nearest round number regardless"], ans: 0, ok: "Beyond the extreme.", bad: "Where the idea fails." },
+      { k: "mc", q: "The nearest zone is only 1.2R away. What do you do?", o: ["Stretch the target", "Skip: it fails the room test", "Double the size", "Remove the target"], ans: 1, ok: "Skipping is a position.", bad: "Do not stretch a target." },
+      { k: "mc", q: "Which stop move is acceptable?", o: ["Further from price", "To breakeven once price has moved in your favour", "Removing it", "Doubling the distance"], ans: 1, ok: "Only toward profit.", bad: "Never loosen a stop." },
+      { k: "mc", q: "When do you decide how to manage a winner?", o: ["When it is in profit", "Before entry", "After exit", "Never"], ans: 1, ok: "Decisions before entry resist emotion.", bad: "Plan first." },
+    ],
+  },
+
+  "12-3": {
+    goal: "Calculate expectancy in R, and see why reward-to-risk matters more than win rate.",
+    blocks: [
+      p(`<b>R</b> is your risk on a trade. If you risk 100 and lose it, that is a loss of 1R. If you make 200, that is a win of 2R. Counting results in R rather than money lets you compare trades of different sizes. <b>Expectancy</b> is the average result per trade in R.`),
+      p(`The formula is <b>(win rate x average win in R) minus (loss rate x average loss in R)</b>. With a win rate of 40% and an average win of 2R, and losses of exactly 1R, expectancy is 0.4 x 2 minus 0.6 x 1 = 0.2R per trade.`),
+      table(["Win rate","Average win","Expectancy per trade"],[
+        ["40%","2R","0.4 x 2 - 0.6 x 1 = +0.20R"],
+        ["50%","1.5R","0.5 x 1.5 - 0.5 x 1 = +0.25R"],
+        ["35%","2R","0.35 x 2 - 0.65 x 1 = +0.05R"],
+        ["30%","3R","0.3 x 3 - 0.7 x 1 = +0.20R"],
+        ["60%","0.8R","0.6 x 0.8 - 0.4 x 1 = +0.08R"],
+      ]),
+      p(`A 60% win rate with a small average win is worth less than a 40% win rate with 2R. That is the reason for the 2R minimum in the playbook. Costs (spread and commission) reduce every number in the table, so a thin edge on paper can vanish in practice.`),
+      h("Losing streaks happen"),
+      p(`Even a good system has long losing runs. The chance of losing n trades in a row, starting from a given trade, is (1 minus win rate) to the power n.`),
+      table(["Win rate","5 losses in a row","8 in a row","10 in a row"],[
+        ["40%","7.8%","1.7%","0.6%"],
+        ["50%","3.1%","0.4%","0.1%"],
+      ]),
+      p(`Those numbers are per starting point. Over 100 trades there are many starting points, so a streak of five or six losses is normal at a 40% win rate and eight is not unusual. If you did not expect it, it feels like the system broke. If you did, it is a cost of doing business.`),
+      rule(`Measure in R. Expectancy depends on win rate and reward together. A losing streak of five or more is normal, and your sizing must survive it.`),
+      hw(30, `Using your library, calculate your win rate, average win and average loss in R for each setup and the expectancy. Record the longest losing streak in your data. Size your risk so that twice that streak would not exceed 10% of your account.`),
+    ],
+    qs: [
+      { k: "mc", q: "Win rate 45%, average win 2R, losses 1R. What is the expectancy?", o: ["+0.10R", "+0.35R", "+0.90R", "-0.10R"], ans: 1, ok: "0.45 x 2 - 0.55 x 1 = 0.35R.", bad: "Win rate times win minus loss rate times loss." },
+      { k: "mc", q: "Which is worth more per trade: 60% wins at 0.8R, or 40% wins at 2R?", o: ["60% at 0.8R", "40% at 2R", "They are equal", "Neither wins"], ans: 1, ok: "0.08R against 0.20R.", bad: "Compute both expectancies." },
+      { k: "mc", q: "At a 40% win rate, what is the chance of five losses in a row from a given starting trade?", o: ["About 1%", "About 8%", "About 25%", "Zero"], ans: 1, ok: "0.6 to the power 5 is about 7.8%.", bad: "(1 - win rate) to the power n." },
+      { k: "mc", q: "Why do costs matter to a thin edge?", o: ["They do not", "They reduce each trade's result and can erase a small expectancy", "They only affect gold", "They increase wins"], ans: 1, ok: "Spread and commission come off every trade.", bad: "Costs reduce every result." },
+    ],
+  },
+
+  "12-4": {
+    goal: "Pre-commit to rules that protect you during a losing streak and after a big win.",
+    blocks: [
+      p(`Most trading damage is not done by bad setups. It is done by the decisions that follow a loss (or a win) in a hurry. The defence is to decide in advance what you will do, in writing, when it is calm.`),
+      table(["Situation","The usual mistake","The pre-committed rule"],[
+        ["<b>After a loss</b>","Revenge trade to win it back, larger size","After a full-size loss, wait for the next scheduled window. No trades for 30 minutes."],
+        ["<b>After two losses in a day</b>","Hunting for a third trade to recover","Stop for the day. Journal and review."],
+        ["<b>After a big win</b>","Oversizing, because you feel invincible","Same size. Size changes only with a rule, never a feeling."],
+        ["<b>A trade moving against you</b>","Moving the stop away","The stop never moves away. Exit if the idea fails."],
+        ["<b>A missed trade</b>","Chasing it at a worse price","Missed trades cost nothing. Wait for the next signal."],
+        ["<b>Boredom</b>","Taking low-grade signals","Score under 5 means no trade. Idle is a position."],
+      ]),
+      h("Limits"),
+      p(`Set a daily loss limit, for example 2% of the account or two full-size losses, whichever comes first. Set a weekly limit, for example 5%. When you hit either, you stop and review. These limits cap the damage of a bad stretch. They are not optional, and they are written before the week starts.`),
+      h("Process, not outcome"),
+      p(`A good trade is one that followed the plan, whatever its result. A bad trade broke the plan, whatever its result. Judge yourself on the plan, because a trade that lost 1R on a perfect plan is a good trade, and a trade that won 3R by breaking the rules is a bad one that will cost you later.`),
+      rule(`Decide in writing, when calm, what you will do after a loss, a win, or a streak. Judge trades on the plan, not the result.`),
+      hw(20, `Write your own version of the table above, with your own rules and limits. Sign and date it. Put it where you see it before every session. At the end of the week note every time you broke a rule and why.`),
+    ],
+    qs: [
+      { k: "mc", q: "You hit your daily loss limit at 11:00 CET. What do you do?", o: ["Keep trading to recover", "Stop for the day, journal and review", "Double the size", "Remove the limit"], ans: 1, ok: "Limits only work if you obey them.", bad: "Stop." },
+      { k: "mc", q: "A trade followed your plan and lost 1R. How do you judge it?", o: ["A bad trade", "A good trade: it followed the plan", "Irrelevant", "A reason to change the rules"], ans: 1, ok: "Process, not outcome.", bad: "The plan matters." },
+      { k: "mc", q: "After a big win, you feel like increasing size. What is the rule?", o: ["Increase", "Same size: size changes only with a written rule", "Double", "Stop trading"], ans: 1, ok: "Feelings do not change size.", bad: "Rules do." },
+      { k: "mc", q: "You miss a trade because you were away. What do you do?", o: ["Chase it", "Nothing: missed trades cost nothing", "Take double the next one", "Move your stop"], ans: 1, ok: "Missed trades are free.", bad: "Do not chase." },
+    ],
+  },
+
+  "12-5": {
+    goal: "Keep a journal that records the right things, and run a weekly review that finds your edge in your own data.",
+    blocks: [
+      p(`The journal is the single most valuable thing you will build in this course. It turns your trading from a feeling into a data set. A good journal is short enough to fill in every time and complete enough to answer any question later.`),
+      h("The record, per trade"),
+      ol(
+        `Date, time in CET, and instrument.`,
+        `The setup (1 to 5) and the signal candle type.`,
+        `The scorecard total out of six.`,
+        `Entry, stop, target and R.`,
+        `A screenshot with the signal candle marked.`,
+        `The result in R, not money.`,
+        `One sentence: what you would do differently.`,
+      ),
+      h("The weekly review"),
+      p(`Every Friday, after the last session, spend 30 minutes with the week's entries and answer five questions.`),
+      ol(
+        `How many trades did I take and how many followed the plan?`,
+        `What was my total in R, and what was the average per trade?`,
+        `Which setup, hour and score earned the most R? Which lost the most?`,
+        `Which rule did I break, and what did it cost?`,
+        `What is one change I will make next week?`,
+      ),
+      table(["Setup","Trades","Win rate","Average R","Total R"],[
+        ["1. Pin bar or doji at a level","12","42%","+0.30","+3.6"],
+        ["2. Sweep and reclaim","9","44%","+0.45","+4.1"],
+        ["3. Break and retest","7","29%","-0.10","-0.7"],
+      ]),
+      p(`The table is an illustration of the shape of a monthly summary, not real results. After 100 trades, a table like this tells you which setups to keep, which to reduce and which to drop, using your own evidence.`),
+      rule(`Record the same things every time, review every Friday, and change one thing at a time.`),
+      hw(30, `Build your journal in a spreadsheet with the seven fields as columns and a summary sheet that totals R by setup, by hour and by score. Back-fill 10 trade plans from your library.`),
+    ],
+    qs: [
+      { k: "mc", q: "In which unit should journal results be recorded?", o: ["Money", "R", "Pips only", "Percent of account"], ans: 1, ok: "R makes trades comparable.", bad: "Record in R." },
+      { k: "mc", q: "How many changes should you make after a weekly review?", o: ["As many as possible", "One at a time", "None", "Ten"], ans: 1, ok: "One change keeps the effect measurable.", bad: "Change one thing." },
+      { k: "mc", q: "Why include a screenshot with each entry?", o: ["Decoration", "Evidence you can review without hindsight", "The broker requires it", "To share"], ans: 1, ok: "A screenshot is a record.", bad: "Evidence." },
+      { k: "mc", q: "What does the journal let you do after 100 trades?", o: ["Nothing", "Find which setups, hours and scores earn the most R, using your own evidence", "Guarantee profit", "Avoid all losses"], ans: 1, ok: "Your edge shows in your data.", bad: "It reveals patterns." },
+    ],
+  },
+
+  "12-6": {
+    exam: true,
+    goal: "Write your trading plan, set your limits, and complete the module test.",
+    blocks: [
+      p(`Your trading plan is a one-page document, written once and reviewed every month. It contains the rules you have learned and the numbers you have chosen. When you are tempted to break a rule, you read the plan.`),
+      h("The plan template"),
+      ol(
+        `<b>Markets.</b> The two instruments I trade and why.`,
+        `<b>Hours.</b> The CET windows I trade and the windows I stand aside.`,
+        `<b>Method.</b> The setups I trade (from 1 to 5) and the ones I skip.`,
+        `<b>Selection.</b> Minimum scorecard score, and the rule that Place is mandatory.`,
+        `<b>Risk.</b> Risk per trade, daily loss limit and weekly loss limit.`,
+        `<b>Stops and targets.</b> My stop rules per setup and my management method.`,
+        `<b>News.</b> My stand-aside windows around releases.`,
+        `<b>After a loss and after a win.</b> The pre-committed rules from lesson 12.4.`,
+        `<b>Review.</b> The day and time of my weekly review.`,
+        `<b>Conditions for going live.</b> The number of logged signals, the demo period and the results I need to see.`,
+      ),
+      p(`Do not copy someone else's plan. A plan you did not write is a plan you will not follow. Use your data and your life to fill in each line.`),
+      hw(20, `Write your plan on one page. Read it aloud. Remove anything you would not actually do. Sign and date it.`),
+    ],
+    qs: [
+      { k: "mc", ref: "12-1", q: "Balance 10,000, risk 1%, stop 20 pips, pip value 10 per lot. What size?", o: ["0.25 lots", "0.5 lots", "1 lot", "2 lots"], ans: 1, ok: "100 / (20 x 10) = 0.5 lots.", bad: "Money at risk divided by stop times pip value." },
+      { k: "mc", ref: "12-1", q: "What should you size a trade from?", o: ["The margin", "The stop distance", "Your confidence", "The spread"], ans: 1, ok: "The stop.", bad: "Size from the stop." },
+      { k: "mc", ref: "12-2", q: "Which stop move is acceptable?", o: ["Further from price", "To breakeven after the trade has moved in your favour", "Removing it", "Doubling it"], ans: 1, ok: "Only toward profit.", bad: "Never loosen." },
+      { k: "mc", ref: "12-3", q: "Win rate 40%, average win 2R, losses 1R. Expectancy per trade?", o: ["-0.2R", "+0.2R", "+0.8R", "0"], ans: 1, ok: "0.4 x 2 - 0.6 x 1 = 0.2R.", bad: "Compute both sides." },
+      { k: "mc", ref: "12-3", q: "At a 40% win rate, a streak of five losses is...", o: ["Impossible", "Normal over many trades", "A broken system", "A sign to double size"], ans: 1, ok: "Streaks are expected.", bad: "Streaks happen." },
+      { k: "mc", ref: "12-4", q: "You hit your daily loss limit. What do you do?", o: ["Trade on", "Stop and review", "Double", "Delete the limit"], ans: 1, ok: "Limits work only if obeyed.", bad: "Stop." },
+      { k: "mc", ref: "12-5", q: "In what unit does the journal record results?", o: ["Money", "R", "Pips", "Percent"], ans: 1, ok: "R.", bad: "R makes trades comparable." },
+      { k: "mc", ref: "12-6", q: "When should a plan be written?", o: ["After a loss", "Before you trade, when calm", "Never", "During a trade"], ans: 1, ok: "Calm and in advance.", bad: "Before." },
+    ],
+  },
+};

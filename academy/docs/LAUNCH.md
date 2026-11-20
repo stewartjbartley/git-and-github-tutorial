@@ -11,10 +11,10 @@ This is what stands between the code in this repo and a paying customer. Read it
 | Stripe Checkout with the EU withdrawal waiver | Built, tested against a signed test webhook, not tested against live Stripe |
 | Progress and quiz results saved per student | Built and tested |
 | 50-hour curriculum map (14 modules, 94 lessons) | Done, totals exactly 3,000 minutes |
-| Written lessons | Modules 1 to 5 (19 h): 36 lessons. See `docs/CURRICULUM.md` for the live status |
+| Written lessons | Modules 1 to 5, 7, 10, 11 and 12 (34 h): 64 lessons. See `docs/CURRICULUM.md` for the live status |
 | Real-chart import from CSV | Built (`content/real/`), no real data supplied yet |
 
-**Only 19 of the 50 hours are written.** Do not market 50 hours as available today. Either finish more modules first, or sell it as a pre-launch with a clear release schedule. The sales page already says how many lessons are ready and marks modules as Ready.
+**Only 34 of the 50 hours are written.** Do not market 50 hours as available today. Either finish more modules first, or sell it as a pre-launch with a clear release schedule. The sales page already says how many lessons are ready and marks modules as Ready.
 
 ## Set-up checklist
 
@@ -58,7 +58,7 @@ I am not a lawyer and `/legal` is a template with a warning box on it. Before la
 
 Lessons live in `content/lessons/mN.ts`. Add a file, export a record keyed by slug (for example `"3-1"`), register it in `content/lessons/index.ts`. Each lesson is a list of blocks plus 3 to 8 quiz questions. The curriculum map, sales page, dashboard and "Ready" badges update on their own. A lesson with no content shows "being written".
 
-Suggested order from here: Modules 7, 10, 11 and 12 next (candle pairs, sessions, the setup playbook, risk), then 6, 8, 9, 13 and 14. Each module is about 3 to 4.5 hours of material.
+Still to write: Modules 6, 8, 9, 13 and 14 (momentum, structure, zones, market playbooks, practice lab and capstone). Each module is about 3 to 4.5 hours of material.
 
 ## Not built
 

@@ -93,14 +93,14 @@ How candles read each other: engulfing, inside bars, harami, tweezers, stars and
 
 | # | Lesson | Min | Status |
 |---|---|---|---|
-| 7.1 | Five questions to ask of every candle | 30 | Planned |
-| 7.2 | Engulfing | 40 | Planned |
-| 7.3 | Inside and outside bars | 40 | Planned |
-| 7.4 | Harami, piercing line and dark cloud | 35 | Planned |
-| 7.5 | Tweezers | 30 | Planned |
-| 7.6 | Stars and three-candle patterns | 35 | Planned |
-| 7.7 | Soldiers, crows and strings | 30 | Planned |
-| 7.8 | Pattern location lab | 30 | Planned |
+| 7.1 | Five questions to ask of every candle | 30 | Written |
+| 7.2 | Engulfing | 40 | Written |
+| 7.3 | Inside and outside bars | 40 | Written |
+| 7.4 | Harami, piercing line and dark cloud | 35 | Written |
+| 7.5 | Tweezers | 30 | Written |
+| 7.6 | Stars and three-candle patterns | 35 | Written |
+| 7.7 | Soldiers, crows and strings | 30 | Written |
+| 7.8 | Pattern location lab | 30 | Written |
 
 ## Module 8: Market structure and trend (3.5 h)
 
@@ -136,13 +136,13 @@ How candles change meaning across the day in CET, and how to build a daily routi
 
 | # | Lesson | Min | Status |
 |---|---|---|---|
-| 10.1 | Sessions in depth | 35 | Planned |
-| 10.2 | The Asian range and the London open | 40 | Planned |
-| 10.3 | US data and the New York open | 40 | Planned |
-| 10.4 | Daily, weekly and monthly opens and levels | 35 | Planned |
-| 10.5 | Index opens and gaps: DAX, US500, IBEX | 35 | Planned |
-| 10.6 | Trading around news | 30 | Planned |
-| 10.7 | Building a daily routine in CET | 25 | Planned |
+| 10.1 | Sessions in depth | 35 | Written |
+| 10.2 | The Asian range and the London open | 40 | Written |
+| 10.3 | US data and the New York open | 40 | Written |
+| 10.4 | Daily, weekly and monthly opens and levels | 35 | Written |
+| 10.5 | Index opens and gaps: DAX, US500, IBEX | 35 | Written |
+| 10.6 | Trading around news | 30 | Written |
+| 10.7 | Building a daily routine in CET | 25 | Written |
 
 ## Module 11: The setup playbook (3.5 h)
 
@@ -150,13 +150,13 @@ Five setups with trigger, stop and target, and a scorecard for choosing between 
 
 | # | Lesson | Min | Status |
 |---|---|---|---|
-| 11.1 | Anatomy of a trade plan | 30 | Planned |
-| 11.2 | Setup 1: pin bar or doji at a level | 30 | Planned |
-| 11.3 | Setup 2: sweep and reclaim | 35 | Planned |
-| 11.4 | Setup 3: break and retest | 30 | Planned |
-| 11.5 | Setup 4: inside bar break | 30 | Planned |
-| 11.6 | Setup 5: engulfing at a pullback | 30 | Planned |
-| 11.7 | Scoring and selecting | 25 | Planned |
+| 11.1 | Anatomy of a trade plan | 30 | Written |
+| 11.2 | Setup 1: pin bar or doji at a level | 30 | Written |
+| 11.3 | Setup 2: sweep and reclaim | 35 | Written |
+| 11.4 | Setup 3: break and retest | 30 | Written |
+| 11.5 | Setup 4: inside bar break | 30 | Written |
+| 11.6 | Setup 5: engulfing at a pullback | 30 | Written |
+| 11.7 | Scoring and selecting | 25 | Written |
 
 ## Module 12: Risk, psychology and the journal (3 h)
 
@@ -164,12 +164,12 @@ Sizing, stops, expectancy, the losing streak, and a journal that finds your edge
 
 | # | Lesson | Min | Status |
 |---|---|---|---|
-| 12.1 | Risk per trade and position sizing | 35 | Planned |
-| 12.2 | Stops, targets and trade management | 35 | Planned |
-| 12.3 | Expectancy and R-multiples | 30 | Planned |
-| 12.4 | The psychology of the losing streak | 30 | Planned |
-| 12.5 | The journal and the weekly review | 30 | Planned |
-| 12.6 | Daily limits and your written trading plan | 20 | Planned |
+| 12.1 | Risk per trade and position sizing | 35 | Written |
+| 12.2 | Stops, targets and trade management | 35 | Written |
+| 12.3 | Expectancy and R-multiples | 30 | Written |
+| 12.4 | The psychology of the losing streak | 30 | Written |
+| 12.5 | The journal and the weekly review | 30 | Written |
+| 12.6 | Daily limits and your written trading plan | 20 | Written |
 
 ## Module 13: Market playbooks (2.5 h)
 
@@ -195,4 +195,4 @@ Replay practice, a 100-signal backtest, review, demo rules, and your own trading
 | 14.4 | Demo trading rules | 30 | Planned |
 | 14.5 | Capstone: your trading plan | 45 | Planned |
 
-**Total: 50 hours, 3000 minutes.** Written: 36 lessons, 19 hours.
+**Total: 50 hours, 3000 minutes.** Written: 64 lessons, 34 hours.
