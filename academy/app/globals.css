@@ -220,3 +220,21 @@ th { font-family:var(--font-mono); font-size:12px; letter-spacing:.05em; text-tr
 .dl-box { margin:2em 0 0; padding:14px 16px; border:1px solid var(--line); border-radius:8px; background:var(--surface); max-width:66ch; }
 .dl-box h3 { margin:0 0 8px; font-size:1rem; }
 .dl-box .dl { border:0; padding:8px 0; border-top:1px dashed var(--line); border-radius:0; background:transparent; }
+
+/* candle reference + tools */
+.filters { display:grid; gap:10px; margin:12px 0 4px; }
+.filters input[type=search] { font:inherit; padding:9px 12px; border:1px solid var(--line); border-radius:6px; background:var(--surface); color:var(--ink); max-width:360px; }
+.chipset { display:flex; gap:6px; flex-wrap:wrap; }
+.candle-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr)); gap:14px; margin:12px 0; }
+.candle { display:grid; grid-template-columns:110px minmax(0,1fr); gap:14px; border:1px solid var(--line); border-radius:8px; background:var(--surface); padding:14px; }
+@media (max-width:480px) { .candle { grid-template-columns:minmax(0,1fr); } .cmini { max-width:110px; } }
+.cmini svg { width:100%; height:auto; display:block; }
+.candle h3 { margin:0 0 2px; font-size:1.05rem; display:flex; gap:8px; align-items:baseline; flex-wrap:wrap; }
+.candle p { margin:4px 0; font-size:.9rem; }
+.candle .aka { color:var(--muted); font-size:.82rem; margin-bottom:6px; }
+.bias { font-family:var(--font-mono); font-size:11px; letter-spacing:.04em; text-transform:uppercase; padding:1px 6px; border-radius:4px; border:1px solid var(--line); font-weight:500; }
+.bias-bullish { color:var(--cup); border-color:var(--cup); } .bias-bearish { color:var(--cdown); border-color:var(--cdown); }
+.bias-neutral { color:var(--muted); } .bias-continuation { color:var(--accent); border-color:var(--accent); }
+.tool select, .calc select { font:inherit; padding:6px 8px; border:1px solid var(--line); border-radius:6px; background:var(--bg); color:var(--ink); width:100%; }
+.calc .small, .small { font-size:.82rem; color:var(--muted); }
+.pos { color:var(--cup) !important; } .neg { color:var(--cdown) !important; }

@@ -11,10 +11,10 @@ This is what stands between the code in this repo and a paying customer. Read it
 | Stripe Checkout with the EU withdrawal waiver | Built, tested against a signed test webhook, not tested against live Stripe |
 | Progress and quiz results saved per student | Built and tested |
 | 55-hour curriculum map (15 modules, 103 lessons) | Done, totals 3,280 minutes (54.7 hours) |
-| Written lessons | 73 of 103 lessons, 38.7 of 54.7 hours. See `docs/CURRICULUM.md` for the live status |
+| Written lessons | All 103 lessons, 54.7 hours. See `docs/CURRICULUM.md` |
 | Real-chart import from CSV | Built (`content/real/`), no real data supplied yet |
 
-**Only 39 of the 55 hours are written.** Do not market 55 hours as available today. Either finish more modules first, or sell it as a pre-launch with a clear release schedule. The sales page already says how many lessons are ready and marks modules as Ready.
+**All 103 lessons are written (54.7 hours).** The sales page promises about 55 hours of guided study including homework. It is guided study, not video, and the page says so.
 
 ## Set-up checklist
 
@@ -59,7 +59,7 @@ I am not a lawyer and `/legal` is a template with a warning box on it. Before la
 
 Lessons live in `content/lessons/mN.ts`. Add a file, export a record keyed by slug (for example `"3-1"`), register it in `content/lessons/index.ts`. Each lesson is a list of blocks plus 3 to 8 quiz questions. The curriculum map, sales page, dashboard and "Ready" badges update on their own. A lesson with no content shows "being written".
 
-Still to write: Modules 6, 8, 9, 13 and 14 (momentum, structure, zones, market playbooks, practice lab and capstone), 16.0 hours in total.
+Nothing is planned-only. Suggested additions: a lesson on choosing a broker, platform and order types, and a macro primer (interest rates, inflation, central banks and risk sentiment) for price-action traders.
 
 ## Not built
 
@@ -67,4 +67,8 @@ Video hosting, certificates, a student community, an admin dashboard (use Stripe
 
 ## Downloadable PDFs
 
-Ten printable PDFs live in `private/pdfs/` and are served only to paying students through `/api/downloads/[id]` (a signed-in student without a purchase is sent to checkout). They are built by `scripts/build-pdfs.ts`, which reuses the lesson chart engine, so edit the lesson, then run `NODE_PATH=$(npm root -g) npx tsx scripts/build-pdfs.ts` after installing Playwright (`npm i -D playwright && npx playwright install chromium`). Add a PDF by adding a document to the script and an entry in `content/downloads.ts` naming the lessons that offer it. The PDFs contain the same rules as the lessons, so rebuild them whenever you change a rule.
+Twelve printable PDFs live in `private/pdfs/` and are served only to paying students through `/api/downloads/[id]` (a signed-in student without a purchase is sent to checkout). They are built by `scripts/build-pdfs.ts`, which reuses the lesson chart engine, so edit the lesson, then run `NODE_PATH=$(npm root -g) npx tsx scripts/build-pdfs.ts` after installing Playwright (`npm i -D playwright && npx playwright install chromium`). Add a PDF by adding a document to the script and an entry in `content/downloads.ts` naming the lessons that offer it. The PDFs contain the same rules as the lessons, so rebuild them whenever you change a rule.
+
+## Free pages for marketing
+
+Two pages are public and need no account: `/candles` (the candlestick reference chart, filterable) and `/tools` (pip, point, position size and drawdown calculators). They are good for search traffic and as links from social posts. Each links back to the course. The candle data lives in `content/candles.ts` and feeds both the page and the PDF.

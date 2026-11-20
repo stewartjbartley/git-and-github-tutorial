@@ -100,7 +100,7 @@ export function chart(spec: ChartSpec, opt: ChartOpt = {}): string {
   const price = (v: number) => (spec.real ? v.toFixed(spec.real.dec) : px(v, spec.base));
   const ann = mini
     ? []
-    : (spec.ann || []).filter((a) => !quiet || a.t === "hline" || a.t === "zone" || a.t === "strip");
+    : (spec.ann || []).filter((a) => !quiet || a.t === "hline" || a.t === "zone" || a.t === "strip" || a.t === "line");
   let lo = Math.min(...B.map((b) => b.l));
   let hi = Math.max(...B.map((b) => b.h));
   ann.forEach((a) => {
@@ -179,6 +179,10 @@ export function chart(spec: ChartSpec, opt: ChartOpt = {}): string {
       const x2 = X(a.i2) + step / 2;
       s.push(`<line class="hl" x1="${x1}" x2="${x2}" y1="${Y(a.p)}" y2="${Y(a.p)}"/>`);
       if (a.label) s.push(`<text class="lb lb-info" x="${x1}" y="${Y(a.p) - 5}">${esc(a.label)}</text>`);
+    }
+    if (a.t === "line") {
+      s.push(`<line class="hl" style="stroke-dasharray:none;stroke-width:1.8" x1="${X(a.i1)}" y1="${Y(a.p1)}" x2="${X(a.i2)}" y2="${Y(a.p2)}"/>`);
+      if (a.label) s.push(`<text class="lb lb-info" x="${X(a.i2) - 4}" y="${Y(a.p2) + 16}" text-anchor="end">${esc(a.label)}</text>`);
     }
     if (a.t === "box") {
       let hb = -1e9;

@@ -14,6 +14,8 @@ export async function SiteBar() {
         </Link>
         <nav>
           <Link href="/#curriculum">Curriculum</Link>
+          <Link href="/candles">Candle chart</Link>
+          <Link href="/tools">Free tools</Link>
           <Link href="/course">My course</Link>
           <Link href="/course/downloads">Downloads</Link>
           {signedIn ? (

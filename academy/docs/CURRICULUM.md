@@ -82,12 +82,12 @@ Wide-range candles, the midpoint test, exhaustion and traps.
 
 | # | Lesson | Min | Status |
 |---|---|---|---|
-| 6.1 | Wide-range candles | 30 | Planned |
-| 6.2 | Marubozu and strength | 30 | Planned |
-| 6.3 | The follow-through test | 35 | Planned |
-| 6.4 | Acceleration and exhaustion | 35 | Planned |
-| 6.5 | Momentum traps | 25 | Planned |
-| 6.6 | Trading momentum: the pullback entry | 25 | Planned |
+| 6.1 | Wide-range candles | 30 | Written |
+| 6.2 | Marubozu and strength | 30 | Written |
+| 6.3 | The follow-through test | 35 | Written |
+| 6.4 | Acceleration and exhaustion | 35 | Written |
+| 6.5 | Momentum traps | 25 | Written |
+| 6.6 | Trading momentum: the pullback entry | 25 | Written |
 
 ## Module 7: Candle pairs and triples (4.5 h)
 
@@ -110,13 +110,13 @@ Swing points, trends, ranges, breaks of structure and multi-timeframe alignment.
 
 | # | Lesson | Min | Status |
 |---|---|---|---|
-| 8.1 | Swing points | 30 | Planned |
-| 8.2 | Trends and ranges | 30 | Planned |
-| 8.3 | Break of structure | 35 | Planned |
-| 8.4 | Pullbacks and trend health | 35 | Planned |
-| 8.5 | Trendlines and channels | 30 | Planned |
-| 8.6 | Multi-timeframe alignment | 30 | Planned |
-| 8.7 | Structure lab | 20 | Planned |
+| 8.1 | Swing points | 30 | Written |
+| 8.2 | Trends and ranges | 30 | Written |
+| 8.3 | Break of structure | 35 | Written |
+| 8.4 | Pullbacks and trend health | 35 | Written |
+| 8.5 | Trendlines and channels | 30 | Written |
+| 8.6 | Multi-timeframe alignment | 30 | Written |
+| 8.7 | Structure lab | 20 | Written |
 
 ## Module 9: Support, resistance and zones (3.5 h)
 
@@ -124,13 +124,13 @@ Why levels exist, how to draw zones, flips, round numbers and zone quality.
 
 | # | Lesson | Min | Status |
 |---|---|---|---|
-| 9.1 | Why levels exist | 30 | Planned |
-| 9.2 | Drawing zones | 35 | Planned |
-| 9.3 | Flips and retests | 35 | Planned |
-| 9.4 | Round numbers and prior highs and lows | 30 | Planned |
-| 9.5 | Zone quality scoring | 30 | Planned |
-| 9.6 | Candles at zones lab | 30 | Planned |
-| 9.7 | The zone mapping routine | 20 | Planned |
+| 9.1 | Why levels exist | 30 | Written |
+| 9.2 | Drawing zones | 35 | Written |
+| 9.3 | Flips and retests | 35 | Written |
+| 9.4 | Round numbers and prior highs and lows | 30 | Written |
+| 9.5 | Zone quality scoring | 30 | Written |
+| 9.6 | Candles at zones lab | 30 | Written |
+| 9.7 | The zone mapping routine | 20 | Written |
 
 ## Module 10: Time, sessions and daily levels (4 h)
 
@@ -182,11 +182,11 @@ How the method adapts to EUR/USD, GBP/USD, USD/JPY, gold, the DAX, IBEX and US i
 
 | # | Lesson | Min | Status |
 |---|---|---|---|
-| 13.1 | EUR/USD and GBP/USD | 35 | Planned |
-| 13.2 | USD/JPY | 25 | Planned |
-| 13.3 | Gold (XAU/USD) | 30 | Planned |
-| 13.4 | DAX and IBEX | 30 | Planned |
-| 13.5 | US500 and Nasdaq | 30 | Planned |
+| 13.1 | EUR/USD and GBP/USD | 35 | Written |
+| 13.2 | USD/JPY | 25 | Written |
+| 13.3 | Gold (XAU/USD) | 30 | Written |
+| 13.4 | DAX and IBEX | 30 | Written |
+| 13.5 | US500 and Nasdaq | 30 | Written |
 
 ## Module 14: Practice lab and capstone (3.5 h)
 
@@ -194,11 +194,11 @@ Replay practice, a 100-signal backtest, review, demo rules, and your own trading
 
 | # | Lesson | Min | Status |
 |---|---|---|---|
-| 14.1 | The replay method | 30 | Planned |
-| 14.2 | Backtesting 100 signals | 60 | Planned |
-| 14.3 | Reviewing your data | 45 | Planned |
-| 14.4 | Demo trading rules | 30 | Planned |
-| 14.5 | Capstone: your trading plan | 45 | Planned |
+| 14.1 | The replay method | 30 | Written |
+| 14.2 | Backtesting 100 signals | 60 | Written |
+| 14.3 | Reviewing your data | 45 | Written |
+| 14.4 | Demo trading rules | 30 | Written |
+| 14.5 | Capstone: your trading plan | 45 | Written |
 
 ## Module 15: Funded accounts and prop firms (2 h)
 
@@ -211,4 +211,4 @@ How proprietary-firm evaluations work, the standard rules, how to size within th
 | 15.3 | Fitting the method to the rules | 30 | Written |
 | 15.4 | Is it worth it? Economics and red flags | 30 | Written |
 
-**Total: 54.7 hours, 3280 minutes, 103 lessons.** Written: 73 lessons, 38.7 hours.
+**Total: 54.7 hours, 3280 minutes, 103 lessons.** Written: 103 lessons, 54.7 hours.

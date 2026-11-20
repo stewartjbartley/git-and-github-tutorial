@@ -17,7 +17,9 @@ export type Block =
   | { t: "clock" }
   | { t: "score" }
   | { t: "sim" }
-  | { t: "dd" };
+  | { t: "dd" }
+  | { t: "pip" }
+  | { t: "point" };
 
 export type Question =
   | { k: "click"; chart: string; ans: number; q: string; ok: string; bad: string; ref?: string }

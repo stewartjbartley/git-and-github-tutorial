@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { chart } from "@/lib/chart";
 import { CH } from "@/content/charts";
-import { MODULES, COURSE_MINUTES, COURSE_HOURS, fmtHours, moduleMinutes } from "@/content/curriculum";
+import { MODULES, COURSE_HOURS, fmtHours, moduleMinutes } from "@/content/curriculum";
 import { LESSONS } from "@/content/lessons";
 import { getPriceLabel } from "@/lib/stripe";
 
@@ -15,7 +15,7 @@ export default async function Home() {
     <main className="wide">
       <section className="hero">
         <h1>Read candles without indicators</h1>
-        <p>A {COURSE_HOURS}-hour course on price action for forex, gold and stock indices, including how spot, CFD and futures products differ and how prop-firm rules work. You learn what each candle says, how candles talk to each other, when they matter in the day (in CET), and how to turn every signal into a plan with an entry, a stop and a target.</p>
+        <p>A {COURSE_HOURS}-hour course on price action for forex, gold and stock indices, including how spot, CFD and futures products differ, how prop-firm rules work, and a full printable trading journal. You learn what each candle says, how candles talk to each other, when they matter in the day (in CET), and how to turn every signal into a plan with an entry, a stop and a target.</p>
         <div className="cta-row">
           <Link className="btn primary big" href="/checkout">Get the course{price ? ` for ${price}` : ""}</Link>
           <Link className="btn big" href="/course/1-1">Try a free lesson</Link>
@@ -47,7 +47,7 @@ export default async function Home() {
 
       <section className="section" id="curriculum">
         <h2>The curriculum</h2>
-        <p>{readyCount} of {lessonCount} lessons are ready now, in {readyMods.length} of {MODULES.length} modules (marked Ready below). The rest are released in order, and every module is included in the price.</p>
+        <p>{readyCount === lessonCount ? `All ${lessonCount} lessons are written and available now.` : `${readyCount} of ${lessonCount} lessons are ready now, in ${readyMods.length} of ${MODULES.length} modules (marked Ready below). The rest are released in order, and every module is included in the price.`}</p>
         <div style={{ marginTop: 16 }}>
           {MODULES.map((m) => {
             const ready = m.lessons.every((l) => LESSONS[l.slug]);
@@ -85,7 +85,7 @@ export default async function Home() {
         <div className="price-card">
           <div className="price">{price ?? "Price set at checkout"}</div>
           <p>One payment. Instant access to every module as it is released, and to updates to existing lessons.</p>
-          <p>Includes all {lessonCount} lessons, the interactive candle builders, the session clock, the scorecard, the position-size, drawdown and prop-firm simulators, ten printable PDFs and progress tracking.</p>
+          <p>Includes all {lessonCount} lessons, the interactive candle builders, the session clock, the scorecard, the position-size, drawdown and prop-firm simulators, twelve printable PDFs including a full trading journal and a candlestick reference chart, free-standing calculators, and progress tracking.</p>
           <Link className="btn primary big" href="/checkout">Buy now</Link>
           <p className="fine" style={{ marginTop: 12 }}>You will be asked to confirm that you want immediate access and understand you lose the 14-day right to cancel once access begins. See the <Link href="/legal#refunds">refund and cancellation terms</Link>.</p>
         </div>

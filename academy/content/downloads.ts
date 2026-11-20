@@ -8,6 +8,8 @@ export type Download = {
 };
 
 export const DOWNLOADS: Download[] = [
+  { id: "candle-encyclopedia", file: "candle-encyclopedia.pdf", title: "Candlestick reference chart", desc: "Every candle and pattern in the course with its name, story, where it matters, what to expect and what confirms it.", lessons: ["2-6", "7-1", "7-8"] },
+  { id: "trading-journal", file: "trading-journal.pdf", title: "Trading journal (full printable workbook)", desc: "Cover, plan page, 100-signal tracker, six trade-log pages, four weekly reviews, monthly summary, R curve, drawdown tracker, psychology log and screenshot index.", lessons: ["12-7", "14-2"] },
   { id: "candle-measures", file: "candle-measures.pdf", title: "Candle measures cheat sheet", desc: "The five measures, the thresholds, the eight candle types with pictures, and a 10-candle practice grid.", lessons: ["2-6", "2-9"] },
   { id: "session-map-cet", file: "session-map-cet.pdf", title: "Session and time map (CET)", desc: "Sessions, candle close times, news times and a daily routine, with space to record your own platform's clock.", lessons: ["1-8", "10-1", "10-7"] },
   { id: "sweep-breakout-card", file: "sweep-breakout-card.pdf", title: "Sweep or breakout decision card", desc: "The tests and the five-step decision process, with the two reference charts.", lessons: ["5-5"] },

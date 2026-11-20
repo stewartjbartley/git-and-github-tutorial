@@ -3,6 +3,7 @@ import { realSpec } from "@/lib/realChart";
 import { CH, MINI } from "@/content/charts";
 import type { Block } from "@/content/types";
 import { Builder } from "./Builder";
+import { PipCalc, PointCalc } from "./Tools";
 import { Calc, ChallengeSim, Clock, DrawdownCalc, ScoreCard } from "./Widgets";
 
 const Fig = ({ html, cap }: { html: string; cap: string }) => (
@@ -65,5 +66,7 @@ export function BlockView({ b }: { b: Block }) {
     case "score": return <ScoreCard />;
     case "sim": return <ChallengeSim />;
     case "dd": return <DrawdownCalc />;
+    case "pip": return <PipCalc />;
+    case "point": return <PointCalc />;
   }
 }

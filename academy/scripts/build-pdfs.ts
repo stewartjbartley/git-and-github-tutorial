@@ -8,6 +8,7 @@ import { readFileSync, mkdirSync } from "fs";
 import path from "path";
 import { chart } from "../lib/chart";
 import { CH, MINI } from "../content/charts";
+import { CANDLES, BIAS_LABEL, GROUP_LABEL, type Group } from "../content/candles";
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const { chromium } = require("playwright");
@@ -44,6 +45,17 @@ th{background:#EEF2F6;font-size:7.6pt;text-transform:uppercase;letter-spacing:.0
 .fig svg{width:100%;height:auto}
 .fig p{font-size:8pt;color:#566170;margin:2px 0 6px}
 .small{font-size:8pt;color:#566170}
+.entry{display:grid;grid-template-columns:62px 1fr;gap:8px;border:1px solid #CBD3DC;border-radius:4px;padding:5px;break-inside:avoid;margin:0 0 6px;font-size:7.8pt;line-height:1.3}
+.entry svg{width:100%;height:auto}
+.entry h3{margin:0 0 1px;font-size:9pt}
+.entry p{margin:1px 0}
+.bias{font-size:6.6pt;text-transform:uppercase;letter-spacing:.04em;border:1px solid #CBD3DC;border-radius:3px;padding:0 4px;margin-left:4px;font-weight:700}
+.bias.bullish{color:#16845A;border-color:#16845A}.bias.bearish{color:#C93A30;border-color:#C93A30}.bias.continuation{color:#1D4ED8;border-color:#1D4ED8}
+.cols2{column-count:2;column-gap:8px}
+.page{page-break-after:always}.page:last-child{page-break-after:auto}
+.rgrid{height:300px;border:1px solid #12171E;background-image:linear-gradient(#DDE3EA 1px,transparent 1px),linear-gradient(90deg,#DDE3EA 1px,transparent 1px);background-size:15px 15px}
+.tiny td,.tiny th{font-size:7.4pt;padding:2px 3px}
+.tiny .blank td{height:27px}
 ${chartCss}
 `;
 
@@ -277,6 +289,34 @@ ${[
 <tr class="blank"><td>Pass rate halved</td><td></td><td></td><td></td><td></td></tr></table>
 <p class="small">If the result is negative when the pass rate is halved, write down what would have to be true for you to proceed. If you have no logged results, your pass rate is a guess.</p>
 ${lines(3)}`),
+  },
+
+  {
+    id: "candle-encyclopedia",
+    html: wrap("Candlestick reference chart", "Every candle and pattern in the course: its name, the story it tells, where it matters, what to expect and what confirms it. Expectations are tendencies, not forecasts. A pattern matters only at a place, in the right trend and at a live hour.", (["single", "pair", "triple", "context"] as Group[]).map((g) => `<h2>${GROUP_LABEL[g]}</h2><div class="cols2">${CANDLES.filter((c) => c.group === g).map((c) => `<div class="entry"><div>${chart(MINI[c.mini], { mini: true, w: 80, h: 100 })}</div><div><h3>${c.name}<span class="bias ${c.bias}">${BIAS_LABEL[c.bias]}</span></h3>${c.aka ? `<p class="small">${c.aka}</p>` : ""}<p><b>Story.</b> ${c.story}</p><p><b>Looks like.</b> ${c.shows}</p><p><b>Where.</b> ${c.where}</p><p><b>Expect.</b> ${c.expect}</p><p><b>Confirm.</b> ${c.confirm} <span class="small">Lesson ${c.lesson.replace("-", ".")}</span></p></div></div>`).join("")}</div>`).join("") + `<p class="small">Education only, not financial advice.</p>`),
+  },
+  {
+    id: "trading-journal",
+    landscape: true,
+    html: (() => {
+      const logCols = ["#", "Date", "Time CET", "Instrument, TF", "Setup", "Score /6", "Dir", "Entry", "Stop", "Target", "Risk %", "Plan R", "Result R", "Spread, slip", "Plan kept?", "Notes"];
+      const widths = [3, 6, 5, 8, 5, 4, 4, 6, 6, 6, 4, 4, 5, 5, 4, 25];
+      const logPage = (n: number) => `<section class="page"><h2>Trade log ${n} of 6</h2><table class="tiny"><colgroup>${widths.map((w) => `<col style="width:${w}%">`).join("")}</colgroup><tr>${logCols.map((c) => `<th>${c}</th>`).join("")}</tr>${Array.from({ length: 18 }, (_, i) => `<tr class="blank"><td>${(n - 1) * 18 + i + 1}</td>${"<td></td>".repeat(15)}</tr>`).join("")}</table></section>`;
+      const weekly = (n: number) => `<section class="page"><h2>Weekly review ${n}</h2><div class="grid4">${["Week of", "Trades taken", "Plan followed (of those)", "Total R"].map((l) => field(l)).join("")}</div><div class="grid4">${["Average R", "Win rate", "Best setup", "Worst setup"].map((l) => field(l)).join("")}</div><div class="grid2"><div><h3>1. How many trades did I take, and how many followed the plan?</h3>${lines(2)}<h3>2. What was my total in R, and the average per trade?</h3>${lines(2)}<h3>3. Which setup, hour and score earned the most R? Which lost the most?</h3>${lines(3)}</div><div><h3>4. Which rule did I break, and what did it cost?</h3>${lines(3)}<h3>5. What is the one change I will make next week?</h3>${lines(2)}<h3>Lesson of the week</h3>${lines(2)}</div></div></section>`;
+      const cells = Array.from({ length: 10 }, (_, r) => `<tr>${Array.from({ length: 10 }, (_, c) => `<td style="height:34px"><b>${r * 10 + c + 1}</b> <span class="box" style="width:9px;height:9px"></span></td>`).join("")}</tr>`).join("");
+      const body = `
+<section class="page"><div style="padding-top:40px"><h1 style="font-size:34pt">Trading journal</h1><p class="sub" style="font-size:12pt">Naked Chart School</p>${field("Name")}${field("Started")}${field("Instruments")}${field("Trading style and timeframes")}${field("Journal number")}<div class="rule" style="margin-top:20px"><b>How to use it.</b> 1. Write the trade plan before the order. 2. Log every signal you take, and every signal you skip with the reason. 3. Record results in R, not money. 4. Screenshot every signal and name the file date_instrument_timeframe_setup. 5. Review every Friday and change one thing at a time. Education only, not financial advice.</div></div></section>
+<section class="page"><h2>My plan on one page</h2><div class="grid2"><div>${["Markets", "Hours (CET)", "Setups I trade", "Minimum score"].map(field).join("")}</div><div>${["Risk per trade", "Daily loss limit", "Weekly loss limit", "Step-down rule"].map(field).join("")}</div></div><h3>My rules after a loss and after a win</h3>${lines(3)}<h3>Conditions for going live (logged signals, demo period, results needed)</h3>${lines(3)}${field("Signed")}${field("Date / version")}</section>
+<section class="page"><h2>The 100-signal tracker</h2><p class="small">Tick each signal you log with entry, stop, target and result. Do not trade real money until you have logged 100 and reviewed them.</p><table>${cells}</table><div class="grid4">${["Setup 1 count", "Setup 2 count", "Setup 3 count", "Setup 4 count", "Setup 5 count", "Reached 2R", "Stopped out", "Skipped (no trade)"].map(field).join("")}</div></section>
+${[1, 2, 3, 4, 5, 6].map(logPage).join("")}
+${[1, 2, 3, 4].map(weekly).join("")}
+<section class="page"><h2>Monthly summary</h2>${field("Month")}<div class="grid2"><div><h3>By setup</h3><table><tr><th>Setup</th><th>Trades</th><th>Win %</th><th>Avg R</th><th>Total R</th><th>Keep, reduce, drop</th></tr>${blankRows(6, 5)}</table><h3>By window (CET)</h3><table><tr><th>Window</th><th>Trades</th><th>Avg R</th><th>Total R</th></tr><tr class="blank"><td>09:00 to 11:00</td><td></td><td></td><td></td></tr><tr class="blank"><td>14:30 to 17:30</td><td></td><td></td><td></td></tr><tr class="blank"><td>Other</td><td></td><td></td><td></td></tr></table></div><div><h3>By score</h3><table><tr><th>Score</th><th>Trades</th><th>Avg R</th><th>Total R</th></tr><tr class="blank"><td>6</td><td></td><td></td><td></td></tr><tr class="blank"><td>5</td><td></td><td></td><td></td></tr><tr class="blank"><td>4 or less</td><td></td><td></td><td></td></tr></table><h3>Costs</h3>${field("Average spread (pips)")}${field("Average slippage (pips)")}${field("Cost as a share of an average R")}</div></div></section>
+<section class="page"><h2>Cumulative R curve</h2><p class="small">Plot your running total in R after each trade. Mark every drawdown.</p><div class="rgrid"></div>${field("Peak (R)")}${field("Largest drawdown (R)")}</section>
+<section class="page"><h2>Drawdown tracker</h2><table><tr><th>Date</th><th>Account peak</th><th>Account now</th><th>Drawdown %</th><th>Recovery needed %</th><th>Action from my step-down rule</th></tr>${blankRows(6, 12)}</table><p class="small">Recovery needed = drawdown / (1 - drawdown). A 20% drawdown needs 25%. A 50% drawdown needs 100%.</p></section>
+<section class="page"><h2>Psychology and discipline log</h2><table><tr><th>Date</th><th>State (rested, tired, stressed)</th><th>Rules broken</th><th>What I felt before and after</th><th>What I will do next time</th></tr>${blankRows(5, 12)}</table></section>
+<section class="page"><h2>Screenshot index</h2><table><tr><th>File name</th><th>Trade #</th><th>What it shows</th><th>Lesson to revisit</th></tr>${blankRows(4, 16)}</table></section>`;
+      return wrap("", "", body).replace("<h1></h1><p class=\"sub\"></p>", "");
+    })(),
   },
 ];
 
