@@ -181,14 +181,14 @@ export const M1: Record<string, Lesson> = {
   "1-9": {
     goal: "Have a written weekly study plan, a baseline for where you are, and realistic expectations for what this method can do.",
     blocks: [
-      p(`This course is about 55 hours of guided study, not 55 hours of video. The time counts reading, interactive exercises, homework and practice on your own charts. Most of your learning will happen in the homework, which is deliberately hands-on. Skipping it is the most common reason people finish a course and cannot use it.`),
+      p(`This course is about 60 hours of guided study, not 60 hours of video. The time counts reading, interactive exercises, homework and practice on your own charts. Most of your learning will happen in the homework, which is deliberately hands-on. Skipping it is the most common reason people finish a course and cannot use it.`),
       h("The weekly rhythm"),
       table(["Pace","Hours per week","Finish in","Who it suits"],[
-        ["Steady","4","about 14 weeks","Working alongside a job"],
-        ["Faster","8","about 7 weeks","A fixed block of time"],
+        ["Steady","4","about 15 weeks","Working alongside a job"],
+        ["Faster","8","about 8 weeks","A fixed block of time"],
         ["Intensive","12 to 15","about 4 to 5 weeks","Full-time study, with the risk of skipping practice"],
       ]),
-      p(`The pace does not matter. Doing the homework does. If you only have time for half the lessons, do half the lessons properly.`),
+      p(`If you do not yet have a broker or a platform, do Module 16 straight after Module 1. It is self-contained. The pace does not matter. Doing the homework does. If you only have time for half the lessons, do half the lessons properly.`),
       h("The method in one line"),
       p(`Lesson, then homework, then screenshots, then the journal, then review. Every lesson ends with a task on a real chart. Every signal you spot becomes a named screenshot. Each week you review the library. After 100 signals, you will have a data set about your own judgement, and that is worth more than any claim in any course.`),
       h("The 100-signal rule"),
@@ -201,7 +201,7 @@ export const M1: Record<string, Lesson> = {
       hw(30, `Write your weekly plan: the days and hours you will study, your pace from the table, and the day you will review your screenshot folder. Then do the baseline exercise above. Save both in the same folder as your screenshots.`),
     ],
     qs: [
-      { k: "mc", q: "What does '55 hours' mean in this course?", o: ["55 hours of video", "55 hours of guided study including reading, exercises, homework and practice", "55 hours of live trading", "55 hours of lessons without homework"], ans: 1, ok: "It is study time, and the homework is a large part of it.", bad: "It counts the whole study process, not just watching." },
+      { k: "mc", q: "What does '60 hours' mean in this course?", o: ["60 hours of video", "60 hours of guided study including reading, exercises, homework and practice", "60 hours of live trading", "60 hours of lessons without homework"], ans: 1, ok: "It is study time, and the homework is a large part of it.", bad: "It counts the whole study process, not just watching." },
       { k: "mc", q: "When can you trade live money under this course?", o: ["After lesson 1", "After 100 logged signals and a demo period that agrees with them", "After the first profitable week", "Whenever you feel ready"], ans: 1, ok: "100 signals, then demo, then live at small risk.", bad: "The rule is data first, demo second, live last." },
       { k: "mc", q: "Why log every signal as a named screenshot?", o: ["To show others", "To build a personal data set you can measure", "Because the platform requires it", "To save disk space"], ans: 1, ok: "The library is your own evidence about your edge.", bad: "It becomes your data set." },
     ],

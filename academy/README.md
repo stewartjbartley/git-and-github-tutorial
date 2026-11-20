@@ -1,6 +1,6 @@
 # Naked Chart School
 
-An online course of about 55 hours on reading candlestick charts without indicators. Next.js 15, Prisma, PostgreSQL, Stripe, Resend, Tailwind, TypeScript.
+An online course of about 60 hours on reading candlestick charts without indicators. Next.js 15, Prisma, PostgreSQL, Stripe, Resend, Tailwind, TypeScript.
 
 ```bash
 cp .env.example .env        # fill in the values

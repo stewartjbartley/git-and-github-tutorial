@@ -10,7 +10,7 @@ export const metadata = {
 export default function ToolsPage() {
   return (
     <main className="wide">
-      <section className="hero" style={{ paddingBottom: 8 }}>
+      <section className="hero" style={{ paddingBottom: 8, textAlign: "left", justifyItems: "start" }}>
         <h1>Free trading calculators</h1>
         <p>Four calculators from the Naked Chart School course. They run in your browser and store nothing.</p>
       </section>

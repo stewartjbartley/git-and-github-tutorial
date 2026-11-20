@@ -32,6 +32,6 @@ for (const m of MODULES) for (const meta of m.lessons) {
     }
   });
 }
-if (COURSE_HOURS !== 55) fail(`course is now ${COURSE_HOURS} hours. Update the "55 hours" copy in lesson 1.9 (and the study-pace table) and this check.`);
+if (COURSE_HOURS !== 60) fail(`course is now ${COURSE_HOURS} hours. Update the "60 hours" copy in lesson 1.9 (and the study-pace table) and this check.`);
 console.log(`${written} lessons written, ${(writtenMin / 60).toFixed(1)} hours, ${bad} problems`);
 process.exit(bad ? 1 : 0);

@@ -318,6 +318,63 @@ ${[1, 2, 3, 4].map(weekly).join("")}
       return wrap("", "", body).replace("<h1></h1><p class=\"sub\"></p>", "");
     })(),
   },
+
+  {
+    id: "broker-checklist",
+    html: wrap("Broker checklist, order types and margin card", "Check a broker from primary sources before you deposit. Learn the orders and the margin maths before you trade.", `
+<h2>Verification</h2>
+<div class="chk"><span class="box"></span>I found the legal entity that will hold my account (footer or terms).</div>
+<div class="chk"><span class="box"></span>I looked it up on the regulator's own public register, not a link from the broker's site.</div>
+<div class="chk"><span class="box"></span>The licence permissions cover what I will trade.</div>
+<div class="chk"><span class="box"></span>I read the order execution policy and the conflicts policy.</div>
+<div class="chk"><span class="box"></span>Client money is segregated and an investor compensation scheme applies (limits checked).</div>
+<div class="chk"><span class="box"></span>For EU retail CFDs: leverage within ESMA limits, 50% margin close-out, negative balance protection.</div>
+<div class="chk"><span class="box"></span>I tested a small withdrawal early.</div>
+<h2>Warning signs</h2>
+<table><tr><th>Sign</th><th>Seen?</th></tr>
+<tr><td>No verifiable regulator, or only an offshore licence</td><td></td></tr>
+<tr><td>Promised returns or pressure to deposit more</td><td></td></tr>
+<tr><td>Bonuses with withdrawal conditions</td><td></td></tr>
+<tr><td>Unsolicited "account manager" or social media contact</td><td></td></tr>
+<tr><td>Leverage far above the limits for my region</td><td></td></tr>
+<tr><td>Offers to recover lost funds for a fee</td><td></td></tr></table>
+<h2>Cost comparison</h2>
+<table><tr><th></th><th>Broker A</th><th>Broker B</th></tr>
+<tr class="blank"><td>Legal entity and regulator</td><td></td><td></td></tr>
+<tr class="blank"><td>Execution model</td><td></td><td></td></tr>
+<tr class="blank"><td>EUR/USD spread at 10:00 CET</td><td></td><td></td></tr>
+<tr class="blank"><td>Commission per lot</td><td></td><td></td></tr>
+<tr class="blank"><td>Overnight financing (long / short)</td><td></td><td></td></tr>
+<tr class="blank"><td>Inactivity, conversion and withdrawal fees</td><td></td><td></td></tr>
+<tr class="blank"><td>Platforms offered</td><td></td><td></td></tr></table>
+<h2>Order types</h2>
+<table><tr><th>Order</th><th>What it does</th><th>Use it for</th></tr>
+<tr><td>Market</td><td>Trades now at the best price</td><td>Entering at the close of a signal candle</td></tr>
+<tr><td>Limit</td><td>Your price or better</td><td>A retest entry, or a target</td></tr>
+<tr><td>Stop (entry)</td><td>Becomes a market order past a level</td><td>A break entry beyond a signal candle</td></tr>
+<tr><td>Stop loss</td><td>Closes at your stop</td><td>Every trade, attached on entry</td></tr>
+<tr><td>Take profit</td><td>Closes at your target</td><td>The target</td></tr>
+<tr><td>Stop-limit</td><td>A stop that becomes a limit order</td><td>When you will not accept slippage (it may not fill)</td></tr>
+<tr><td>OCO</td><td>One fill cancels the other</td><td>A stop above and below a compression cluster</td></tr></table>
+<h2>Margin</h2>
+<table><tr><th>Term</th><th>Formula</th></tr>
+<tr><td>Used margin</td><td>Notional value / leverage</td></tr>
+<tr><td>Equity</td><td>Balance + floating profit or loss</td></tr>
+<tr><td>Free margin</td><td>Equity - used margin</td></tr>
+<tr><td>Margin level</td><td>Equity / used margin x 100</td></tr></table>
+<div class="rule"><b>Remember:</b> margin is the deposit, risk is the loss at the stop. Size from the stop. Attach the stop on entry. Only move a stop toward profit. Put an expiry on every trigger order.</div>`),
+  },
+  {
+    id: "macro-planner",
+    landscape: true,
+    html: wrap("Weekly macro planner (CET)", "Complete on Sunday in twenty minutes. Its only job is to tell you what to stand aside from and what mood the markets are in.", `
+<table class="tiny"><tr><th style="width:9%">Day</th><th style="width:9%">Time (CET)</th><th>Release or event</th><th style="width:10%">Previous</th><th style="width:10%">Forecast</th><th style="width:10%">Actual</th><th style="width:16%">Stand-aside window</th><th style="width:20%">First four 15-minute candles</th></tr>
+${["Mon", "Tue", "Wed", "Thu", "Fri"].map((d) => `<tr class="blank"><td>${d}</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr class="blank"><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>`).join("")}</table>
+<div class="grid2"><div>${field("Mood: risk-on, risk-off or mixed (indices, dollar chart)")}${field("Rate story: who is expected to tighten or ease")}${field("What would change my mind?")}</div><div>${field("Central bank events and press conferences")}${field("Instruments most exposed this week")}${field("Size changes for event risk")}</div></div>
+<h2>Friday review</h2>
+<table class="tiny"><tr><th>Release</th><th>Forecast vs actual</th><th>Did price move the way the headline implied?</th><th>What I learned</th></tr>${blankRows(4, 4)}</table>
+<p class="small">Typical times (CET): US jobs, CPI, retail sales 14:30. ECB 14:15, conference 14:45. Bank of England 13:00. Fed 20:00, conference 20:30. Eurozone flash PMIs and German Ifo about 10:00. UK CPI and jobs about 08:00. US flash PMIs 15:45, ISM 16:00. Check an economic calendar for exact times.</p>`),
+  },
 ];
 
 async function main() {

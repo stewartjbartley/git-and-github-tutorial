@@ -2,8 +2,9 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getSession, hasAccess } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { MODULES, COURSE_MINUTES, fmtHours, moduleMinutes } from "@/content/curriculum";
+import { MODULES, COURSE_HOURS, fmtHours, moduleMinutes } from "@/content/curriculum";
 import { LESSONS } from "@/content/lessons";
+import { Icon, ModuleIcon, ProgressRing } from "@/components/Icon";
 
 export const metadata = { title: "My course" };
 
@@ -17,29 +18,38 @@ export default async function Dashboard() {
   const pct = written.length ? Math.round((doneN / written.length) * 100) : 0;
 
   return (
-    <main className="wrap">
+    <main className="wrap" style={{ maxWidth: 900 }}>
       <div className="dash-h">
-        <h1>My course</h1>
-        <p className="legal">{s.email}</p>
-        {!access && <div className="paywall"><p><b>You do not have access yet.</b> The free lessons are open. Buy the course to unlock the rest.</p><Link className="btn primary" href="/checkout">Get the course</Link></div>}
-        <p><Link href="/course/downloads">Printable downloads</Link></p>
-        <p>{doneN} of {written.length} available lessons complete. The full course is {fmtHours(COURSE_MINUTES)} hours.</p>
-        <div className="bar-track" aria-label={`${pct}% complete`}><div className="bar-fill" style={{ width: `${pct}%` }} /></div>
+        <ProgressRing pct={pct} size={84} />
+        <div className="meta">
+          <h1>My course</h1>
+          <p>{doneN} of {written.length} lessons complete. About {COURSE_HOURS} hours of study in total.</p>
+          <p className="legal">{s.email}</p>
+        </div>
+        <Link className="btn" href="/course/downloads"><Icon name="download" size={16} /> Downloads</Link>
       </div>
+      {!access && (
+        <div className="paywall"><p><b>You do not have access yet.</b> The free lessons are open. Buy the course to unlock the rest.</p><Link className="btn primary" href="/checkout">Get the course</Link></div>
+      )}
       {MODULES.map((m) => (
-        <section className="section" key={m.no}>
-          <h2 style={{ fontSize: "1.2rem" }}>Module {m.no}: {m.title} <span className="legal">{fmtHours(moduleMinutes(m))} h</span></h2>
-          {m.lessons.map((l) => {
-            const ready = !!LESSONS[l.slug];
-            const locked = ready && !access && !LESSONS[l.slug].free;
-            return (
-              <Link key={l.slug} href={`/course/${l.slug}`} className={`lrow ${done.has(l.slug) ? "done" : ""} ${ready ? "" : "soon"}`}>
-                <span className="st">{done.has(l.slug) ? "✓" : ready ? (locked ? "🔒" : "○") : "·"}</span>
-                <span>{l.slug.replace("-", ".")} {l.title}{!ready && <span className="badge">Coming</span>}</span>
-                <span className="m">{l.minutes} min</span>
-              </Link>
-            );
-          })}
+        <section className="dash-sec" key={m.no}>
+          <h2><ModuleIcon no={m.no} size={34} />Module {m.no}: {m.title}<span className="hrs">{fmtHours(moduleMinutes(m))} h</span></h2>
+          <div className="group">
+            {m.lessons.map((l) => {
+              const lesson = LESSONS[l.slug];
+              const ready = !!lesson;
+              const locked = ready && !access && !lesson.free;
+              const isDone = done.has(l.slug);
+              return (
+                <Link key={l.slug} href={`/course/${l.slug}`} className={`row-item ${isDone ? "done" : ""} ${ready ? "" : "soon"}`}>
+                  <span className="st">{isDone ? <Icon name="check" size={18} strokeWidth={2.4} /> : locked ? <Icon name="lock" size={15} /> : <span style={{ width: 10, height: 10, borderRadius: "50%", border: "1.5px solid var(--muted)" }} />}</span>
+                  <span>{l.slug.replace("-", ".")}  {l.title}{!ready && <> <span className="badge">Coming</span></>}</span>
+                  <span className="m">{l.minutes} min</span>
+                  <span className="go"><Icon name="chevron-right" size={16} /></span>
+                </Link>
+              );
+            })}
+          </div>
         </section>
       ))}
     </main>

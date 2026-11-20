@@ -8,6 +8,8 @@ export type Download = {
 };
 
 export const DOWNLOADS: Download[] = [
+  { id: "broker-checklist", file: "broker-checklist.pdf", title: "Broker checklist, order types and margin card", desc: "Verification steps, warning signs, a cost comparison, every order type and the margin formulas.", lessons: ["16-1", "16-3", "16-4"] },
+  { id: "macro-planner", file: "macro-planner.pdf", title: "Weekly macro planner (CET)", desc: "A Sunday sheet for releases, stand-aside windows, mood, rate story and a Friday review.", lessons: ["17-3", "17-5"] },
   { id: "candle-encyclopedia", file: "candle-encyclopedia.pdf", title: "Candlestick reference chart", desc: "Every candle and pattern in the course with its name, story, where it matters, what to expect and what confirms it.", lessons: ["2-6", "7-1", "7-8"] },
   { id: "trading-journal", file: "trading-journal.pdf", title: "Trading journal (full printable workbook)", desc: "Cover, plan page, 100-signal tracker, six trade-log pages, four weekly reviews, monthly summary, R curve, drawdown tracker, psychology log and screenshot index.", lessons: ["12-7", "14-2"] },
   { id: "candle-measures", file: "candle-measures.pdf", title: "Candle measures cheat sheet", desc: "The five measures, the thresholds, the eight candle types with pictures, and a 10-candle practice grid.", lessons: ["2-6", "2-9"] },

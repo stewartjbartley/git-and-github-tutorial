@@ -23,8 +23,8 @@ export function CandleExplorer({ items, labels }: { items: ExplorerItem[]; label
     <div>
       <div className="filters" role="group" aria-label="Filters">
         <input type="search" placeholder="Search candles" aria-label="Search candles" value={q} onChange={(e) => setQ(e.target.value)} />
-        <div className="chipset">{GROUPS.map(([k, l]) => <button key={k} className="btn" aria-pressed={group === k} onClick={() => setGroup(k)}>{l}</button>)}</div>
-        <div className="chipset">{BIASES.map(([k, l]) => <button key={k} className="btn" aria-pressed={bias === k} onClick={() => setBias(k)}>{l}</button>)}</div>
+        <div className="seg" role="group" aria-label="Type">{GROUPS.map(([k, l]) => <button key={k} aria-pressed={group === k} onClick={() => setGroup(k)}>{l}</button>)}</div>
+        <div className="seg" role="group" aria-label="Bias">{BIASES.map(([k, l]) => <button key={k} aria-pressed={bias === k} onClick={() => setBias(k)}>{l}</button>)}</div>
       </div>
       <p className="legal">{list.length} of {items.length} candles</p>
       {list.length === 0 && <p className="msg">No candles match. Clear a filter or the search box.</p>}

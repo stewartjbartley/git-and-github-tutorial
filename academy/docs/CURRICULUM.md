@@ -1,4 +1,4 @@
-# Naked Chart School: 55-hour curriculum
+# Naked Chart School: 60-hour curriculum
 
 Generated from `content/curriculum.ts`. Hours count guided study (reading, interactive exercises, homework, practice), not video.
 
@@ -211,4 +211,28 @@ How proprietary-firm evaluations work, the standard rules, how to size within th
 | 15.3 | Fitting the method to the rules | 30 | Written |
 | 15.4 | Is it worth it? Economics and red flags | 30 | Written |
 
-**Total: 54.7 hours, 3280 minutes, 103 lessons.** Written: 103 lessons, 54.7 hours.
+## Module 16: Brokers, platforms and orders (2.83333 h)
+
+Choosing and checking a broker, accounts and platforms, every order type, and how margin and margin calls work.
+
+| # | Lesson | Min | Status |
+|---|---|---|---|
+| 16.1 | Choosing and checking a broker | 35 | Written |
+| 16.2 | Accounts and platforms | 30 | Written |
+| 16.3 | Order types and execution | 35 | Written |
+| 16.4 | Leverage, margin and margin calls | 35 | Written |
+| 16.5 | Platform skills lab | 35 | Written |
+
+## Module 17: Macro context for price-action traders (2.66667 h)
+
+Interest rates, inflation and jobs data, risk sentiment and the dollar: a risk map and a mood, never a trade by itself.
+
+| # | Lesson | Min | Status |
+|---|---|---|---|
+| 17.1 | Why macro matters to a candle reader | 30 | Written |
+| 17.2 | Interest rates and central banks | 35 | Written |
+| 17.3 | Inflation, jobs and growth data | 35 | Written |
+| 17.4 | Risk sentiment, correlations and the dollar | 35 | Written |
+| 17.5 | Building a macro-aware routine | 25 | Written |
+
+**Total: 60.2 hours, 3610 minutes, 113 lessons.** Written: 113 lessons, 60.2 hours.

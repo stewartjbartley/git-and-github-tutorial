@@ -143,6 +143,20 @@ export const MODULES: Module[] = [
     ["Fitting the method to the rules", 30, "Sizing so you cannot breach, plus a pass-rate simulator for your own numbers."],
     ["Is it worth it? Economics and red flags", 30, "Expected value of a challenge fee, warning signs, and what to do instead."],
   ]),
+  mod(16, "Brokers, platforms and orders", "Choosing and checking a broker, accounts and platforms, every order type, and how margin and margin calls work.", [
+    ["Choosing and checking a broker", 35, "Execution models, regulation, how to verify a broker and the warning signs."],
+    ["Accounts and platforms", 30, "Account types, platforms, base currency and why charts from different feeds differ."],
+    ["Order types and execution", 35, "Market, limit, stop, OCO and trailing orders, and the right order for each setup."],
+    ["Leverage, margin and margin calls", 35, "Margin, equity and margin level, with a worked stop-out example."],
+    ["Platform skills lab", 35, "Thirteen hands-on steps on a demo account, and the module test."],
+  ]),
+  mod(17, "Macro context for price-action traders", "Interest rates, inflation and jobs data, risk sentiment and the dollar: a risk map and a mood, never a trade by itself.", [
+    ["Why macro matters to a candle reader", 30, "What macro adds and what it cannot do."],
+    ["Interest rates and central banks", 35, "Rates, hawks and doves, and how a central bank day looks in candles."],
+    ["Inflation, jobs and growth data", 35, "Reading a calendar: forecast against actual, and the second move."],
+    ["Risk sentiment, correlations and the dollar", 35, "Risk-on and risk-off, the dollar factor, and grouping correlated risk."],
+    ["Building a macro-aware routine", 25, "A weekly sheet, a morning check and the module test."],
+  ]),
 ];
 
 export const COURSE_MINUTES = MODULES.reduce((a, m) => a + m.lessons.reduce((b, l) => b + l.minutes, 0), 0);

@@ -3,6 +3,7 @@ import { chart } from "@/lib/chart";
 import { MINI } from "@/content/charts";
 import { CANDLES, BIAS_LABEL } from "@/content/candles";
 import { LESSONS } from "@/content/lessons";
+import { Icon } from "@/components/Icon";
 import { CandleExplorer, type ExplorerItem } from "@/components/CandleExplorer";
 
 export const metadata = {
@@ -19,12 +20,10 @@ export default function CandlesPage() {
   }));
   return (
     <main className="wide">
-      <section className="hero" style={{ paddingBottom: 8 }}>
+      <section className="hero" style={{ paddingBottom: 8, textAlign: "left", justifyItems: "start" }}>
         <h1>Every candle, what it is called and what to expect</h1>
         <p>{CANDLES.length} candles and candle patterns from the Naked Chart School course. Filter by type or bias, or search by name.</p>
-        <div className="rule" style={{ maxWidth: 760 }}>
-          <b>Read this first</b> The expectations are tendencies, not forecasts. A candle means something only at a place, in the right trend and at a live hour, and it needs its confirmation before it is a signal. Test every pattern on your own market.
-        </div>
+        <aside className="callout rule-note"><span className="ci"><Icon name="lightbulb" size={18} /></span><div><b className="lead">Read this first</b>The expectations are tendencies, not forecasts. A candle means something only at a place, in the right trend and at a live hour, and it needs its confirmation before it is a signal. Test every pattern on your own market.</div></aside>
       </section>
       <CandleExplorer items={items} labels={BIAS_LABEL} />
       <p className="legal" style={{ margin: "32px 0" }}>This reference is free to use. The full course teaches how to measure, grade and trade each of these. <Link href="/#curriculum">See the curriculum</Link>. Education only, not financial advice.</p>

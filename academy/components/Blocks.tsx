@@ -3,6 +3,7 @@ import { realSpec } from "@/lib/realChart";
 import { CH, MINI } from "@/content/charts";
 import type { Block } from "@/content/types";
 import { Builder } from "./Builder";
+import { Icon } from "./Icon";
 import { PipCalc, PointCalc } from "./Tools";
 import { Calc, ChallengeSim, Clock, DrawdownCalc, ScoreCard } from "./Widgets";
 
@@ -40,11 +41,11 @@ export function BlockView({ b }: { b: Block }) {
   switch (b.t) {
     case "p": return <p dangerouslySetInnerHTML={{ __html: b.html }} />;
     case "h": return <h3>{b.text}</h3>;
-    case "rule": return <aside className="rule"><b>Pro rule</b> <span dangerouslySetInnerHTML={{ __html: b.html }} /></aside>;
-    case "warn": return <aside className="rule warn"><b>Risk</b> <span dangerouslySetInnerHTML={{ __html: b.html }} /></aside>;
+    case "rule": return <aside className="callout"><span className="ci"><Icon name="lightbulb" size={18} /></span><div><b className="lead">Pro rule</b><span dangerouslySetInnerHTML={{ __html: b.html }} /></div></aside>;
+    case "warn": return <aside className="callout warn"><span className="ci"><Icon name="alert" size={18} /></span><div><b className="lead">Risk</b><span dangerouslySetInnerHTML={{ __html: b.html }} /></div></aside>;
     case "ol": return <ol>{b.items.map((x, i) => <li key={i} dangerouslySetInnerHTML={{ __html: x }} />)}</ol>;
     case "hw": return (
-      <section className="hw"><h3>Homework on a real chart <span className="mins">{b.minutes} min</span></h3><p dangerouslySetInnerHTML={{ __html: b.html }} /></section>
+      <aside className="callout hw"><span className="ci"><Icon name="pencil" size={18} /></span><div><b className="lead">Homework on a real chart<span className="mins">{b.minutes} min</span></b><span dangerouslySetInnerHTML={{ __html: b.html }} /></div></aside>
     );
     case "fig": return <Fig html={chart(CH[b.id], { bare: b.bare })} cap={b.cap} />;
     case "tf": return <Timeframes cap={b.cap} />;
